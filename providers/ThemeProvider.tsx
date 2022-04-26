@@ -4,6 +4,7 @@ import { light } from 'theme/'
 import { DARK_THEME, LIGHT_THEME  } from 'constants/theme'
 import { globalStyle } from 'stitches.config'
 import { useLocalStorage } from 'hooks';
+import { isBrowser } from 'utils';
 
 interface ThemeContextData {
   toggleTheme: () => void;
@@ -29,10 +30,10 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 		[LIGHT_THEME]: light
 	}), [])
 
-  const isBrowser = () => typeof window !== "undefined"
+  const _isBrowser = isBrowser()
 
 	const isDarkThemePreferences = () => {
-    const _isBrowser = isBrowser()
+    
     return _isBrowser && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   }
 
@@ -44,11 +45,11 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 	const [theme, setTheme] = useState(mapTheme[currentTheme as keyof typeof mapTheme])
 
 	useEffect(() => {
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+		_isBrowser && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
 			const newColorScheme = event.matches ? DARK_THEME : LIGHT_THEME
 			setCurrentTheme(newColorScheme)
 		})
-	}, [])
+	}, [_isBrowser])
 
 
 

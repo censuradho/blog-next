@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { isBrowser } from "utils";
 
 export function useLocalStorage<T>(
   key: string,
@@ -6,10 +7,11 @@ export function useLocalStorage<T>(
 ): [T, (value: T | ((val: T) => T)) => void] {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
+  const _isBrowser = isBrowser()
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       // Get from local storage by key
-      const item = window.localStorage.getItem(key);
+      const item = _isBrowser ?  window.localStorage.getItem(key) : null
       // Parse stored json or if none return initialValue
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
@@ -29,7 +31,7 @@ export function useLocalStorage<T>(
       // Save state
       setStoredValue(valueToStore);
       // Save to local storage
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      _isBrowser && window.localStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (error) {
       // A more advanced implementation would handle the error case
       console.log(error);
