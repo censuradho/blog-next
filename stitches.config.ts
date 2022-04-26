@@ -30,7 +30,7 @@ const globalStyle =  GlobalCss({
 		padding: '0',
 		margin: '0',
 		boxSizing: 'border-box',
-		fonFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+		fontFamily: 'Poppins, sans-serif',
 		color: '$text'
 	},
 	body: {

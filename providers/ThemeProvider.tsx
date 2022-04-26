@@ -57,9 +57,9 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 		setCurrentTheme(prevState => prevState === DARK_THEME ? LIGHT_THEME : DARK_THEME)
 	}, [])
 
-	const handleSavePreference = () => {
+	const handleSavePreference = useCallback(() => {
 		setThemeStorage(currentTheme)
-	}
+	}, [])
 
 	useEffect(() => {
 		document.body.classList.remove('theme-default', light)
@@ -67,7 +67,7 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 
 		setTheme(mapTheme[currentTheme as keyof typeof mapTheme])
 		handleSavePreference()
-	}, [currentTheme])
+	}, [currentTheme, handleSavePreference, mapTheme])
 
 	useEffect(() => {
 		globalStyle()
