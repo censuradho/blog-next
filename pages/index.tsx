@@ -20,6 +20,15 @@ function Home ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
       createdAt={value?.created_at}
       readTime={value?.reading_time}
       slug={value.slug}
+      author={{
+        avatarUrl: value?.authors?.[0]?.profile_image || '',
+        name: value?.authors?.[0]?.name,
+        slug: value?.authors?.[0]?.slug || ''
+      }}
+      tags={value?.tags?.map(value => ({
+        label: value?.name || '',
+        slug: value?.slug
+      })) || []}
     />
   ))
 

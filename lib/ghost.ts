@@ -19,7 +19,7 @@ export async function getPosts(options?: Params) {
     });
 }
 
-export async function getSinglePost(slug: string) {
+export async function getPost(slug: string) {
   return await api.posts
     .read({
       slug

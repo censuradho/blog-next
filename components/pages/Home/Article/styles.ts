@@ -24,6 +24,7 @@ export const Link = styled('a', {
     opacity: 0.8
   }
 })
+
 export const Description = styled('p', {
   fontSize: '$md',
   fontWeight: 'normal',

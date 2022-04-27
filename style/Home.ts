@@ -27,4 +27,8 @@ export const SectionTitle = styled('h2', {
   whiteSpace: 'nowrap'
 })
 
-export const Section = styled('section', {})
+export const Section = styled('section', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$md'
+})
