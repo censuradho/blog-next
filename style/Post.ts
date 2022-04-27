@@ -13,13 +13,14 @@ export const Container = styled('div', {
 export const ImageHeroContainer = styled('div', {
   width: '100%',
   height: '30rem',
-  position: 'relative'
+  position: 'relative',
+  background: '$lightGray'
 })
 
 export const Figure = styled('figure', {
   width: '100%',
   height: '30rem',
-  position: 'relative'
+  position: 'relative',
 })
 
 export const Article = styled('article', {

@@ -7,12 +7,13 @@ import * as Styles from 'style/Post'
 import { lastDayOfYear } from "date-fns";
 import Image from "next/image";
 import { Flex } from "style/Flex";
+import { Header } from "components";
 
 function Post ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
 
-console.log(post)
   return (
     <Styles.Main>
+      <Header />
       <Styles.Container>
         <Flex column gap="md">
           <Styles.ImageHeroContainer>
