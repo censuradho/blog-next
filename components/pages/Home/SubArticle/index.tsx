@@ -5,6 +5,7 @@ import Link from 'next/link'
 import * as Styles from './styles'
 import Image from 'next/image'
 import { Flex } from 'style/Flex'
+import { Tag } from 'components/Tag'
 
 
 interface Tag {
@@ -30,9 +31,7 @@ function BaseSubArticle ({ title, createdAt, readTime, slug, author, tags = [] }
 
   
   const renderTags = tags?.map((value, index) => (
-    <Link key={index} href={`/tag/${value?.slug}`} passHref>
-      <Styles.Tag>{value.label}</Styles.Tag>
-    </Link>
+    <Tag key={index} href={`/tag/${value?.slug}`}>{value.label}</Tag>
   ))
 
   return (

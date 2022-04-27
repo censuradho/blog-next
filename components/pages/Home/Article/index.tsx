@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Flex } from 'style/Flex'
 
 import * as Styles from './styles'
+import { Tag } from 'components/Tag';
 
 interface Tag {
   slug: string;
@@ -24,9 +25,7 @@ function BaseArticle ({ title, tags, createdAt, readTime, slug }: ArticleProps) 
   const formateDate = createdAt && formatPostDate(createdAt)
 
   const renderTags = tags?.map((value, index) => (
-    <Link key={index} href={`/tag/${value?.slug}`} passHref>
-      <Styles.Tag>{value.label}</Styles.Tag>
-    </Link>
+    <Tag key={index} href={`/tag/${value?.slug}`}>{value.label}</Tag>
   ))
 
   return (

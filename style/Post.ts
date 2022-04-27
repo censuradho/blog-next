@@ -12,15 +12,6 @@ export const Meta = styled('div', {
   gap: '0.5rem'
 })
 
-export const Tag = styled('a', {
-  color: 'white',
-  background: '$primary',
-  fontWeight: 'medium',
-  fontSize: '$sm',
-  textDecoration: 'none',
-})
-
-
 export const Container = styled('div', {
   width: '100%',
   margin: '0 auto',

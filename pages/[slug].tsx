@@ -7,7 +7,7 @@ import { getPost, getPosts } from "lib/ghost";
 import * as Styles from 'style/Post'
 
 import { Flex } from "style/Flex";
-import { Avatar, Header } from "components";
+import { Avatar, Header, Tag } from "components";
 import Link from "next/link";
 import { formatPostDate } from "lib/dateFns";
 
@@ -16,9 +16,7 @@ function Post ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const author = post?.primary_author || {} as Partial<Author>
 
   const renderTags = post?.tags?.map((value, index) => (
-    <Link key={index} href={`/tag/${value.slug}`}>
-      <Styles.Tag>{value.name}</Styles.Tag>
-    </Link>
+    <Tag key={index} href={`/tag/${value.slug}`}>{value?.name || ''}</Tag>
   ))
 
   return (
