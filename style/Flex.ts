@@ -79,7 +79,4 @@ export const Flex = styled('div', {
     },
     
   },
-  defaultVariants: {
-		column: 'true'
-	}
 })
