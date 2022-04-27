@@ -5,5 +5,6 @@ export const Button = styled('button', {
   borderRadius: '50%',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  background: '$lightGray'
 })

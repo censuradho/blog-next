@@ -20,7 +20,8 @@ export const Header = styled('header', {
 export const Li = styled('li', {
   a: {
     textDecoration: 'none',
-    fontWeight: 500
+    fontWeight: 500,
+    fontSize: '$md'
   }
 })
 
@@ -50,6 +51,13 @@ export const Navigation = styled('nav', {
 })
 
 export const Ul = styled('ul', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '$sm',
+  margin: '2rem 0',
+
   'a:first-child': {
     color: '$primary'
   }

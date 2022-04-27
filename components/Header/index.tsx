@@ -27,8 +27,10 @@ function BaseHeader (props: HeaderProps) {
   }),[])
 
   return (
-    <Styles.Header>
-      <Styles.Navigation isOpen={isOpen}>
+    <Styles.Header >
+      <Styles.Navigation
+        isOpen={isOpen}
+      >
         <Flex fullWidth justifyContent="flex-end">
           <ButtonIcon icon={{ name: 'close'}} onClick={() => setIsOpen(false)} />
         </Flex>
