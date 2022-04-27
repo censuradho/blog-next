@@ -9,11 +9,18 @@ import * as Styles from 'style/Post'
 import { Flex } from "style/Flex";
 import { Avatar, Header } from "components";
 import Link from "next/link";
+import { formatPostDate } from "lib/dateFns";
 
 function Post ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   const author = post?.primary_author || {} as Partial<Author>
-  
+
+  const renderTags = post?.tags?.map((value, index) => (
+    <Link key={index} href={`/tag/${value.slug}`}>
+      <Styles.Tag>{value.name}</Styles.Tag>
+    </Link>
+  ))
+
   return (
     <>
       <Styles.Main>
@@ -29,6 +36,7 @@ function Post ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
                   </Styles.Figure>
                 )}
               </Styles.ImageHeroContainer>
+              <Styles.Meta>{renderTags} <span>•</span> {post?.published_at && formatPostDate(post?.published_at)}</Styles.Meta>
               <h1>{post?.title}</h1>
               <Styles.Article dangerouslySetInnerHTML={{ __html: post?.html || '' }}></Styles.Article>
             </Flex>
@@ -69,7 +77,7 @@ export const getStaticProps: GetStaticProps<{ post: PostOrPage}> = async (contex
   const slug = context?.params?.slug as string
 
   const post = await getPost(slug, {
-    include: ['authors']
+    include: ['tags', 'authors']
   })
 
   return {

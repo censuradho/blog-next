@@ -4,6 +4,23 @@ export const Main = styled('main', {
   width: '100%',
 })
 
+export const Meta = styled('div', {
+  color: '$text',
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: '3rem',
+  gap: '0.5rem'
+})
+
+export const Tag = styled('a', {
+  color: 'white',
+  background: '$primary',
+  fontWeight: 'medium',
+  fontSize: '$sm',
+  textDecoration: 'none',
+})
+
+
 export const Container = styled('div', {
   width: '100%',
   margin: '0 auto',

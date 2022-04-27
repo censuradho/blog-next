@@ -33,7 +33,7 @@ function Author ({ author, posts }: InferGetStaticPropsType<typeof getStaticProp
 
   return (
     <Styles.Main>
-      <Styles.Hero >
+      <Styles.Hero>
         <Avatar size="lg" src={author?.profile_image as string} alt={author?.name} />
         <Styles.Username>{author?.name}</Styles.Username>
         <Styles.Description>{author?.bio}</Styles.Description>
