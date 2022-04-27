@@ -12,6 +12,8 @@ export const Container = styled('div', {
 
 export const ImageHeroContainer = styled('div', {
   width: '100%',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
   height: '30rem',
   position: 'relative',
   background: '$lightGray'
@@ -21,6 +23,10 @@ export const Figure = styled('figure', {
   width: '100%',
   height: '30rem',
   position: 'relative',
+
+  img: {
+    objectFit: 'cover'
+  }
 })
 
 export const Article = styled('article', {
@@ -50,6 +56,22 @@ export const Article = styled('article', {
     }
   }
 })
-export const Section = styled('section', {})
+export const Section = styled('section', {
+  padding: '3rem 1rem'
+})
 
-export const Footer = styled('footer', {})
+export const Footer = styled('footer', {
+  marginTop: '4rem'
+})
+
+export const Username = styled('strong', {
+  fontSize: '$sm',
+  color: '$body',
+  fontWeight: 'medium',
+})
+
+export const Link = styled('a', {
+  textDecoration: 'none',
+  color: 'inherit',
+  cursor: 'pointer'
+})

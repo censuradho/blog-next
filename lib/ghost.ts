@@ -9,7 +9,7 @@ const api = new GhostContentAPI({
 export async function getPosts(options?: Params) {
   return await api.posts
     .browse({
-      limit: 10,
+      limit: 'all',
       order: 'created_at DESC',
       ...(options && options)
     })
@@ -19,10 +19,23 @@ export async function getPosts(options?: Params) {
     });
 }
 
-export async function getPost(slug: string) {
+export async function getPost(slug: string, options?: Params) {
   return await api.posts
     .read({
-      slug
+      slug,
+    }, options)
+    .catch(err => {
+      console.error(err);
+      throw new Error(err)
+    });
+}
+
+export async function getAuthors(options?: Params) {
+  return await api.authors
+    .browse({
+      limit: 'all',
+      order: 'created_at DESC',
+      ...(options && options)
     })
     .catch(err => {
       console.error(err);
@@ -30,11 +43,12 @@ export async function getPost(slug: string) {
     });
 }
 
-export async function getAuthor(slug: string) {
+
+export async function getAuthor(slug: string, options?: Params) {
   return await api.authors
     .read({
-      slug
-    })
+      slug,
+    }, options)
     .catch(err => {
       console.error(err);
       throw new Error(err)

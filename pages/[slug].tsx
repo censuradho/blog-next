@@ -1,34 +1,56 @@
-import { PostOrPage } from "@tryghost/content-api";
+import { Author, PostOrPage } from "@tryghost/content-api";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import Image from "next/image";
 
 import { getPost, getPosts } from "lib/ghost";
 
 import * as Styles from 'style/Post'
-import { lastDayOfYear } from "date-fns";
-import Image from "next/image";
+
 import { Flex } from "style/Flex";
-import { Header } from "components";
+import { Avatar, Header } from "components";
+import Link from "next/link";
 
 function Post ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
 
+  const author = post?.primary_author || {} as Partial<Author>
+  
   return (
-    <Styles.Main>
-      <Header />
-      <Styles.Container>
-        <Flex column gap="md">
-          <Styles.ImageHeroContainer>
-            {post?.feature_image && (
-              <Styles.Figure>
-                <figcaption>{post?.feature_image_caption}</figcaption>
-                <Image src={post?.feature_image} alt={post?.feature_image_alt || ''} layout="fill" />
-              </Styles.Figure>
-            )}
-          </Styles.ImageHeroContainer>
-          <h1>{post?.title}</h1>
-          <Styles.Article dangerouslySetInnerHTML={{ __html: post?.html || '' }}></Styles.Article>
-        </Flex>
-      </Styles.Container>
-    </Styles.Main>
+    <>
+      <Styles.Main>
+        <Header />
+        <Styles.Section>
+          <Styles.Container>
+            <Flex column gap="md">
+              <Styles.ImageHeroContainer>
+                {post?.feature_image && (
+                  <Styles.Figure>
+                    <figcaption>{post?.feature_image_caption}</figcaption>
+                    <Image src={post?.feature_image} alt={post?.feature_image_alt || ''} layout="fill" />
+                  </Styles.Figure>
+                )}
+              </Styles.ImageHeroContainer>
+              <h1>{post?.title}</h1>
+              <Styles.Article dangerouslySetInnerHTML={{ __html: post?.html || '' }}></Styles.Article>
+            </Flex>
+          </Styles.Container>
+        </Styles.Section>
+        <hr />
+          <Styles.Section>
+            <Styles.Container>
+              <Flex gap="sm" alignItems="center" fullWidth justifyContent="center">
+                <Avatar size="md" src={author?.profile_image as string} alt={author?.name} />
+                <Link href={`/author/${author?.slug}`}>
+                  <Styles.Link>
+                    <Styles.Username>{author?.name}</Styles.Username> 
+                  </Styles.Link>
+                </Link>
+              </Flex>
+            </Styles.Container>
+          </Styles.Section>
+        <hr />
+      </Styles.Main>
+
+    </>
   )
 }
 
@@ -46,7 +68,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<{ post: PostOrPage}> = async (context) => {
   const slug = context?.params?.slug as string
 
-  const post = await getPost(slug)
+  const post = await getPost(slug, {
+    include: ['authors']
+  })
 
   return {
     props: {

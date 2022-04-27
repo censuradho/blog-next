@@ -11,7 +11,8 @@ export const Link = styled('a', {
   textDecoration: 'none',
   color: 'inherit',
   fontFamily: 'inherit',
-
+  cursor: 'pointer',
+  
   '&:hover': {
     opacity: 0.8
   }

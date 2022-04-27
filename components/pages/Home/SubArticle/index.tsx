@@ -40,7 +40,7 @@ function BaseSubArticle ({ title, createdAt, readTime, slug, author, tags = [] }
       <Flex column>
         {renderTags?.length > 0 && <Flex gap="sm">{renderTags}</Flex>}
         <Styles.Title>
-          <Link href={slug} passHref>
+          <Link href={`/${slug}`}>
             <Styles.Link>
               {title}
             </Styles.Link>
@@ -55,7 +55,7 @@ function BaseSubArticle ({ title, createdAt, readTime, slug, author, tags = [] }
         )}
         <Flex column gap="xs" alignItems="flex-start">
           <Styles.Username>
-            <Link href={`/author/${author?.slug}`} passHref>
+            <Link  href={`/author/${author?.slug}`}>
               <Styles.Link>{author?.name}</Styles.Link>
             </Link>
           </Styles.Username>
