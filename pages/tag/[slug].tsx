@@ -45,18 +45,6 @@ const Tag: NextPageWithLayout<InferGetStaticPropsType<typeof getStaticProps>> = 
       <DefaultStyles.Container>
       <DefaultStyles.Section>
         <Flex column gap="sm">{renderArticles}</Flex>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
-        <h1>adsasd</h1>
       </DefaultStyles.Section>
     </DefaultStyles.Container>
     </DefaultStyles.Main>

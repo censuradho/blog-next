@@ -89,7 +89,8 @@ const globalStyle =  GlobalCss({
 		listStyle: 'none'
 	},
 	a: {
-    fontWeight: 500
+    fontWeight: 500,
+		cursor: 'pointer'
    },
 })
 
