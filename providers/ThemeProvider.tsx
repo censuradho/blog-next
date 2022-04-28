@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
-import { light } from 'theme/'
+import { light, dark } from 'theme/'
 import { DARK_THEME, LIGHT_THEME  } from 'constants/theme'
 import { globalStyle } from 'stitches.config'
 import { useLocalStorage } from 'hooks';
@@ -22,24 +22,25 @@ const LOCAL_STORAGE_KEY = '@censuradho'
 export const THEME_KEY = LOCAL_STORAGE_KEY ? `${LOCAL_STORAGE_KEY}:theme` : '@planningPoker:theme'
 
 export function ThemeProvider ({ children }: ThemeProviderProps) {
-
-  const [themeStorage, setThemeStorage] = useLocalStorage(THEME_KEY, LIGHT_THEME)
-  
-	const mapTheme = useMemo(() => ({
-		[DARK_THEME]: light,
-		[LIGHT_THEME]: light
-	}), [])
-
   const _isBrowser = isBrowser()
 
-	const isDarkThemePreferences = () => {
-    
+	const getIsDarkThemePreferences = () => {
     return _isBrowser && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   }
 
+  const [themeStorage, setThemeStorage] = useLocalStorage(THEME_KEY, '')
+  const [_isDarkThemePreferences, setIsDarkThemePreferences] = useState(getIsDarkThemePreferences())
+
+	const mapTheme = useMemo(() => ({
+		[DARK_THEME]: dark,
+		[LIGHT_THEME]: light
+	}), [])
+
+
+
 	const savedTheme = 
     themeStorage
-    || (isDarkThemePreferences() ? DARK_THEME : LIGHT_THEME)
+    || (_isDarkThemePreferences ? DARK_THEME : LIGHT_THEME)
 
 	const [currentTheme, setCurrentTheme] = useState(savedTheme)
 	const [theme, setTheme] = useState(mapTheme[currentTheme as keyof typeof mapTheme])
@@ -62,7 +63,7 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 	}, [])
 
 	useEffect(() => {
-		document.body.classList.remove('theme-default', light)
+		document.body.classList.remove('theme-default', dark)
 		document.body.classList.add(mapTheme[currentTheme as keyof typeof mapTheme])
 
 		setTheme(mapTheme[currentTheme as keyof typeof mapTheme])
@@ -71,7 +72,8 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 
 	useEffect(() => {
 		globalStyle()
-	}, [])
+		setIsDarkThemePreferences(getIsDarkThemePreferences())
+	}, [_isBrowser])
 
 
 	return (
