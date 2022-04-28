@@ -78,16 +78,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
     limit: 'all'
   })
 
-  const total = post?.meta.pagination.total
+  const pages = post?.meta.pagination.pages
 
   const paths = Array
-    .of(total)
+    .of(pages)
     .fill(0)
     .map((_, index) => ({ params: { page: String(index + 1) }}))
 
     return {
       paths,
-      fallback: true // false or 'blocking'
+      fallback: true, // false or 'blocking'
     };
 }
 
