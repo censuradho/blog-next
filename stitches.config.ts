@@ -87,7 +87,10 @@ const globalStyle =  GlobalCss({
 	},
 	li: {
 		listStyle: 'none'
-	}
+	},
+	a: {
+    fontWeight: 500
+   },
 })
 
 export {

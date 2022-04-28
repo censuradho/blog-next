@@ -32,7 +32,7 @@ function BaseArticle ({ title, tags, createdAt, readTime, slug }: ArticleProps) 
     <Styles.Container>
       <Styles.CreatedAt>Latest — {formateDate} <Styles.ReadTime> • {`  ${readTime} min read`}</Styles.ReadTime></Styles.CreatedAt>
       <Styles.Title>
-        <Link href={slug} passHref>
+        <Link href={slug}>
           <Styles.Link>
             {title}
           </Styles.Link>

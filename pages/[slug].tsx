@@ -7,7 +7,7 @@ import { getPost, getPosts } from "lib/ghost";
 import * as Styles from 'style/Post'
 
 import { Flex } from "style/Flex";
-import { Avatar, Header, Tag } from "components";
+import { Avatar, Header, Pagination, Tag } from "components";
 import Link from "next/link";
 import { formatPostDate } from "lib/dateFns";
 import { MainLayout } from "layout";
@@ -37,6 +37,9 @@ const Post: NextPageWithLayout<InferGetStaticPropsType<typeof getStaticProps>> =
             <Styles.Meta>{renderTags} <span>•</span> {post?.published_at && formatPostDate(post?.published_at)}</Styles.Meta>
             <h1>{post?.title}</h1>
             <Styles.Article dangerouslySetInnerHTML={{ __html: post?.html || '' }}></Styles.Article>
+          </Flex>
+          <Flex fullWidth justifyContent="center">
+            <Pagination />
           </Flex>
         </Styles.Container>
       </Styles.Section>

@@ -1,5 +1,5 @@
 import { memo, ReactNode } from 'react'
-import { Header } from './components'
+import { Footer, Header } from './components'
 
 import * as Styles from './styles'
 
@@ -9,10 +9,16 @@ interface MainLayoutProps {
 
 function BaseMainLayout ({ children }: MainLayoutProps) {
   return (
-    <Styles.Container>
-      <Header />
-      <Styles.Content>{children}</Styles.Content>
-    </Styles.Container>
+    <>
+      <Styles.Container>
+        <Header />
+        <Styles.Content>
+          {children}
+          <hr />
+          <Footer />
+        </Styles.Content>
+      </Styles.Container>
+    </>
   )
 }
 

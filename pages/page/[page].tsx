@@ -1,5 +1,5 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Metadata, PostsOrPages } from '@tryghost/content-api'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { Metadata, PostOrPage, PostsOrPages, Pagination as PaginationMeta } from '@tryghost/content-api'
 import {  } from 'date-fns'
 
 import * as Styles from 'style/Home'
@@ -10,13 +10,13 @@ import { getPosts } from 'lib/ghost'
 import { Flex } from 'style/Flex'
 import { Article, SubArticle } from 'components/pages/Home'
 import { Pagination } from 'components'
-import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
-function Home ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [_post, setPost] = useState(post)
+function Page ({ post, meta }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter()
 
-  
-  const [featurePost, ...rest] = _post
+  const featurePost = post?.[0] || {}
+  const rest = post?.filter((value, index) => index > 0) || []
   
   const renderPosts = rest?.map((value, index) => (
     <SubArticle 
@@ -60,10 +60,10 @@ function Home ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
           {renderPosts}
           <Flex fullWidth justifyContent="center">
             <Pagination 
-              total={post?.meta?.pagination?.total}
-              current={post?.meta?.pagination?.page}
-              prev={post?.meta?.pagination?.prev}
-              next={post?.meta?.pagination?.next}
+              current={meta?.page || 0}
+              next={meta?.next || 0}
+              prev={meta?.prev || 0}
+              onChange={value => router.push(`/pages/${value}`)}
             />
           </Flex>
         </Flex>
@@ -73,12 +73,33 @@ function Home ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   )
 }
 
-export const getStaticProps: GetStaticProps<{ post: PostsOrPages }> = async(context) => {
-  const post = await getPosts({
-    include: ['authors', 'tags']
+export const getStaticPaths: GetStaticPaths = async () => {
+  const post = await getPosts({ 
+    limit: 'all'
   })
 
+  const total = post?.meta.pagination.total
 
+  const paths = Array
+    .of(total)
+    .fill(0)
+    .map((_, index) => ({ params: { page: String(index + 1) }}))
+
+    return {
+      paths,
+      fallback: true // false or 'blocking'
+    };
+}
+
+export const getStaticProps: GetStaticProps<{ post: PostsOrPages, meta: PaginationMeta }> = async(context) => {
+  const page = Number(context?.params?.page)
+
+  const post = await getPosts({
+    include: ['authors', 'tags'],
+    page,
+  })
+
+  
   if (!post) {
   return {
       notFound: true,
@@ -87,9 +108,12 @@ export const getStaticProps: GetStaticProps<{ post: PostsOrPages }> = async(cont
   }
 
   return {
-    props: { post },
+    props: { 
+      post,
+      meta: post.meta.pagination
+    },
     revalidate: 10
   }
 }
 
-export default Home
+export default Page

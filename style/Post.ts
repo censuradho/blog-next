@@ -44,10 +44,6 @@ export const Username = styled('strong', {
 })
 
 export const Article = styled('article', {
-
-  a: {
-   color: '$primary' 
-  },
   p: {
     display: 'inline-block',
     marginBottom: '0.5rem'
