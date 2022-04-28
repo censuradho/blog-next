@@ -38,9 +38,6 @@ const Post: NextPageWithLayout<InferGetStaticPropsType<typeof getStaticProps>> =
             <h1>{post?.title}</h1>
             <Styles.Article dangerouslySetInnerHTML={{ __html: post?.html || '' }}></Styles.Article>
           </Flex>
-          <Flex fullWidth justifyContent="center">
-            <Pagination />
-          </Flex>
         </Styles.Container>
       </Styles.Section>
       <hr />
