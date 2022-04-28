@@ -15,7 +15,7 @@ const nextConfig = {
       'images.unsplash.com', 
       'localhost', 
       'static.ghost.org',
-      'censuradho.digitalpress.blog'
+      'digitalpress.fra1.cdn.digitaloceanspaces.com'
     ],
   },
 }
