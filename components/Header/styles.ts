@@ -38,7 +38,7 @@ export const Navigation = styled('nav', {
   opacity: 0,
   visibility: 'hidden',
   transition: '.2s',
-
+  
   variants: {
     isOpen: {
       true: {

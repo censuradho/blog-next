@@ -21,8 +21,8 @@ function Post ({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   return (
     <>
+      <Header />
       <Styles.Main>
-        <Header />
         <Styles.Section>
           <Styles.Container>
             <Flex column gap="md">

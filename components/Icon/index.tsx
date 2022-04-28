@@ -3,7 +3,7 @@ import { useTheme } from 'providers';
 import { memo } from 'react';
 import { icons } from './icons'
 
-type IconNames = keyof typeof icons
+export type IconNames = keyof typeof icons
 
 type Colors  = ReturnType<typeof useTheme>['theme']['colors']
 

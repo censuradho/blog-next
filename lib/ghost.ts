@@ -10,7 +10,6 @@ export async function getPosts(options?: Params) {
   return await api.posts
     .browse({
       limit: 'all',
-      order: 'created_at DESC',
       ...(options && options)
     })
     .catch(err => {
@@ -34,7 +33,6 @@ export async function getAuthors(options?: Params) {
   return await api.authors
     .browse({
       limit: 'all',
-      order: 'created_at DESC',
       ...(options && options)
     })
     .catch(err => {
@@ -46,6 +44,29 @@ export async function getAuthors(options?: Params) {
 
 export async function getAuthor(slug: string, options?: Params) {
   return await api.authors
+    .read({
+      slug,
+    }, options)
+    .catch(err => {
+      console.error(err);
+      throw new Error(err)
+    });
+}
+
+export async function getTags (options?: Params) {
+  return await api.tags
+  .browse({
+    limit: 'all',
+    ...(options && options)
+  })
+  .catch(err => {
+    console.error(err);
+    throw new Error(err)
+  });
+}
+
+export async function getTag(slug: string, options?: Params) {
+  return await api.tags
     .read({
       slug,
     }, options)

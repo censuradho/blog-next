@@ -1,6 +1,17 @@
-export const routePaths = {
+import { IconNames } from 'components/Icon'
+
+interface RoutePaths {
+  icon: IconNames,
+  path: string,
+  label: string
+}
+
+type Paths = 'home'
+
+export const routePaths: Record<Paths, RoutePaths> = {
   home: {
     path: '/',
-    label: 'Blog'
+    label: 'Blog',
+    icon: 'homeLine'
   },
 }

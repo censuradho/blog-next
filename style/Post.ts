@@ -9,7 +9,7 @@ export const Meta = styled('div', {
   display: 'flex',
   alignItems: 'center',
   marginBottom: '3rem',
-  gap: '0.5rem'
+  gap: '$sm'
 })
 
 export const Container = styled('div', {
