@@ -7,7 +7,16 @@ export const Header = styled('header', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  padding: '1.2rem 0'
+  padding: '1.2rem 0',
+
+  '@rmd': {
+    width: '100%',
+    maxHeight: '4rem',
+    alignItems: 'center',
+    flexDirection: 'row-reverse',
+    padding: '0 1.2rem',
+    borderTop: '1px solid $lightGray',
+  }
 })
 
 export const LogoContainer = styled('div', {
@@ -30,6 +39,12 @@ export const Li = styled('li', {
     },
   },
 
+  a: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
   variants: {
     isActive: {
       true: {
@@ -45,11 +60,15 @@ export const Ul = styled('ul', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  flexDirection: 'column'
+  flexDirection: 'column',
+
+  
+  '@rmd': {
+    flexDirection: 'row',
+  }
 })
 
 export const Navigation = styled('nav', {
-  margin: 'auto 0',
   flex: 1,
   display: 'flex',
   alignItems: 'center',

@@ -4,6 +4,8 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPageWithLa
 import { getAuthor, getAuthors, getPosts } from "lib/ghost"
 
 import * as Styles from 'style/Author'
+import * as DefaultStyles from 'style/DefaultStyles'
+
 import { Avatar } from "components"
 import { SubArticle } from "components/pages/Home"
 import { Flex } from "style/Flex"
@@ -34,12 +36,12 @@ const Author: NextPageWithLayout<InferGetStaticPropsType<typeof getStaticProps>>
 
   return (
     <Styles.Main>
-      <Styles.Hero>
+      <DefaultStyles.Hero>
         <Avatar size="lg" src={author?.profile_image as string} alt={author?.name} />
-        <Styles.Username>{author?.name}</Styles.Username>
-        <Styles.Description>{author?.bio}</Styles.Description>
-        <Styles.PostAmount>{`${author?.count?.posts} Posts`}</Styles.PostAmount>
-      </Styles.Hero>
+        <DefaultStyles.Title>{author?.name}</DefaultStyles.Title>
+        <DefaultStyles.Description>{author?.bio}</DefaultStyles.Description>
+        <DefaultStyles.Amount>{`${author?.count?.posts} Posts`}</DefaultStyles.Amount>
+      </DefaultStyles.Hero>
       <Styles.Container>
         <Styles.Section>
           <Flex column gap="sm">{renderArticles}</Flex>

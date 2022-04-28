@@ -27,18 +27,18 @@ export const Hero = styled(Section, {
 
 export const Title = styled('h1', {
   fontSize: '$lg',
-  color: '$body',
+  color: '$text',
   fontFamily: '$text'
 })
 
 export const Description = styled('p', {
-  color: '$body',
+  color: '$text',
   fontSize: '$sm',
-  fontWeight: 'medium',
+  fontWeight: 400,
 })
 
 export const Amount = styled('span', {
   fontSize: '$sm',
-  fontWeight: 'medium',
-  color: '$body'
+  fontWeight: 500,
+  color: '$text'
 })

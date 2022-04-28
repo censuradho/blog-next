@@ -37,6 +37,12 @@ export const Figure = styled('figure', {
   }
 })
 
+export const Username = styled('strong', {
+  fontSize: '$sm',
+  color: '$body',
+  fontWeight: 'medium',
+})
+
 export const Article = styled('article', {
 
   a: {
@@ -70,12 +76,6 @@ export const Section = styled('section', {
 
 export const Footer = styled('footer', {
   marginTop: '4rem'
-})
-
-export const Username = styled('strong', {
-  fontSize: '$sm',
-  color: '$body',
-  fontWeight: 'medium',
 })
 
 export const Link = styled('a', {

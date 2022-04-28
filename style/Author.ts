@@ -15,30 +15,3 @@ export const Section = styled('section', {
   padding: '3rem 1rem',
 })
 
-export const Hero = styled(Section, {
-  padding: '7rem 1rem',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  background: '$lightGray',
-  flexDirection: 'column',
-  gap: '$sm'
-})
-
-export const Username = styled('h1', {
-  fontSize: '$lg',
-  color: '$body',
-  fontFamily: '$text'
-})
-
-export const Description = styled('p', {
-  color: '$body',
-  fontSize: '$sm',
-  fontWeight: 'medium',
-})
-
-export const PostAmount = styled('span', {
-  fontSize: '$sm',
-  fontWeight: 'medium',
-  color: '$body'
-})
