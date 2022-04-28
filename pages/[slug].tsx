@@ -78,8 +78,9 @@ export const getStaticProps: GetStaticProps<{ post: PostOrPage}> = async (contex
 
   return {
     props: {
-      post
-    }
+      post,
+    },
+    revalidate: 10
   }
 }
 
