@@ -78,7 +78,8 @@ export const getStaticProps: GetStaticProps<{ posts: PostOrPage[], tag: Tag }> =
     props: {
       tag,
       posts
-    }
+    },
+    revalidate: 10
   }
 }
 

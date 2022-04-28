@@ -79,7 +79,8 @@ export const getStaticProps: GetStaticProps<{ author: Author, posts: PostOrPage[
     props: {
       author,
       posts
-    }
+    },
+    revalidate: 10
   }
 }
 
