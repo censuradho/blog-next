@@ -1,5 +1,5 @@
 import { Author, PostOrPage } from "@tryghost/content-api"
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next"
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPageWithLayout } from "next"
 
 import { getAuthor, getAuthors, getPosts } from "lib/ghost"
 
@@ -7,9 +7,10 @@ import * as Styles from 'style/Author'
 import { Avatar } from "components"
 import { SubArticle } from "components/pages/Home"
 import { Flex } from "style/Flex"
-import { useState } from "react"
+import { ReactElement, useState } from "react"
+import { MainLayout } from "layout"
 
-function Author ({ author, posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+const Author: NextPageWithLayout<InferGetStaticPropsType<typeof getStaticProps>> = ({ author, posts }) =>  {
   const [_posts, setPosts] = useState(posts)
 
   const renderArticles = _posts?.map((value, index) => (
@@ -78,6 +79,14 @@ export const getStaticProps: GetStaticProps<{ author: Author, posts: PostOrPage[
       posts
     }
   }
+}
+
+Author.getLayout = (page: ReactElement) => {
+  return (
+    <MainLayout>
+      {page}
+    </MainLayout>
+  )
 }
 
 
