@@ -40,7 +40,7 @@ export const Figure = styled('figure', {
 export const Username = styled('strong', {
   fontSize: '$sm',
   color: '$body',
-  fontWeight: 'medium',
+  fontWeight: 400,
 })
 
 export const Article = styled('article', {

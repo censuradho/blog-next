@@ -11,6 +11,7 @@ import { Flex } from 'style/Flex'
 import { Article, SubArticle } from 'components/pages/Home'
 import { Pagination } from 'components'
 import { useRouter } from 'next/router'
+import { Footer } from 'layout/MainLayout/components'
 
 function Page ({ post, meta }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
@@ -38,38 +39,41 @@ function Page ({ post, meta }: InferGetStaticPropsType<typeof getStaticProps>) {
   ))
 
   return (
-  <Styles.Container>
-    <Flex column gap="lg">
-      <Article 
-        title={featurePost?.title} 
-        description={featurePost?.custom_excerpt}
-        createdAt={featurePost?.created_at}
-        readTime={featurePost?.reading_time}
-        slug={featurePost?.slug}
-        tags={featurePost?.tags?.map(value => ({
-          label: value?.name || '',
-          slug: value?.slug
-        })) || []}
-      />
-      <Styles.Section>
+    <>
+      <Styles.Container>
         <Flex column gap="lg">
-          <Flex fullWidth alignItems="center" gap="sm">
-            <Styles.SectionTitle>More issue</Styles.SectionTitle>
-            <hr />
-          </Flex>
-          {renderPosts}
-          <Flex fullWidth justifyContent="center">
-            <Pagination 
-              current={meta?.page || 0}
-              next={meta?.next || 0}
-              prev={meta?.prev || 0}
-              onChange={value => router.push(`/pages/${value}`)}
-            />
-          </Flex>
+          <Article 
+            title={featurePost?.title} 
+            description={featurePost?.custom_excerpt}
+            createdAt={featurePost?.created_at}
+            readTime={featurePost?.reading_time}
+            slug={featurePost?.slug}
+            tags={featurePost?.tags?.map(value => ({
+              label: value?.name || '',
+              slug: value?.slug
+            })) || []}
+          />
+          <Styles.Section>
+            <Flex column gap="lg">
+              <Flex fullWidth alignItems="center" gap="sm">
+                <Styles.SectionTitle>More issue</Styles.SectionTitle>
+                <hr />
+              </Flex>
+              {renderPosts}
+              <Flex fullWidth justifyContent="center">
+                <Pagination 
+                  current={meta?.page || 0}
+                  next={meta?.next || 0}
+                  prev={meta?.prev || 0}
+                  onChange={value => router.push(`/pages/${value}`)}
+                />
+              </Flex>
+            </Flex>
+          </Styles.Section>
         </Flex>
-      </Styles.Section>
-    </Flex>
-  </Styles.Container>
+      </Styles.Container>
+      <Footer />
+    </>
   )
 }
 
