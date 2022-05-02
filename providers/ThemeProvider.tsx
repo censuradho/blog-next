@@ -24,9 +24,9 @@ export const THEME_KEY = LOCAL_STORAGE_KEY ? `${LOCAL_STORAGE_KEY}:theme` : '@pl
 export function ThemeProvider ({ children }: ThemeProviderProps) {
   const _isBrowser = isBrowser()
 
-	const getIsDarkThemePreferences = () => {
+	const getIsDarkThemePreferences = useCallback(() => {
     return _isBrowser && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-  }
+  }, [_isBrowser])
 
   const [themeStorage, setThemeStorage] = useLocalStorage(THEME_KEY, '')
   const [_isDarkThemePreferences, setIsDarkThemePreferences] = useState(getIsDarkThemePreferences())
@@ -35,8 +35,6 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 		[DARK_THEME]: dark,
 		[LIGHT_THEME]: light
 	}), [])
-
-
 
 	const savedTheme = 
     themeStorage
@@ -54,8 +52,9 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 
 
 
-	const toggleTheme = useCallback(() => {    
-		setCurrentTheme(prevState => prevState === DARK_THEME ? LIGHT_THEME : DARK_THEME)
+	const toggleTheme = useCallback(() => {
+		console.log(true)
+		setCurrentTheme(prevState => prevState === LIGHT_THEME ? DARK_THEME : LIGHT_THEME)
 	}, [])
 
 	const handleSavePreference = useCallback((currentTheme: string) => {
@@ -73,10 +72,9 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 	useEffect(() => {
 		globalStyle()
 		setIsDarkThemePreferences(getIsDarkThemePreferences())
-	}, [_isBrowser])
+	}, [_isBrowser, getIsDarkThemePreferences])
 
-
-	return (
+		return (
 		<ThemeContext.Provider value={{ 
 			toggleTheme, 
 			theme, 

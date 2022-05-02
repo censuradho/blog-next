@@ -7,7 +7,7 @@ import { getPost, getPosts } from "lib/ghost";
 import * as Styles from 'style/Post'
 
 import { Flex } from "style/Flex";
-import { Avatar, Header, Pagination, Tag } from "components";
+import { Avatar,  Tag } from "components";
 import Link from "next/link";
 import { formatPostDate } from "lib/dateFns";
 import { MainLayout } from "layout";

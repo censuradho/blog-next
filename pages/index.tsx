@@ -9,9 +9,10 @@ import { getPosts } from 'lib/ghost'
 
 import { Flex } from 'style/Flex'
 import { Article, SubArticle } from 'components/pages/Home'
-import { Pagination } from 'components'
+import { Header, Pagination } from 'components'
 import { useRouter } from 'next/router'
 import { Footer } from 'layout/MainLayout/components'
+import { MainLayout } from 'layout'
 
 function Page ({ post, meta }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()

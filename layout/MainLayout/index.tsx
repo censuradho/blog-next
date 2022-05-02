@@ -1,4 +1,5 @@
 import { memo, ReactNode } from 'react'
+
 import { Footer, Header } from './components'
 
 import * as Styles from './styles'
