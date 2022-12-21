@@ -1,6 +1,7 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "@next/next/link-passhref": "off"
+    "@next/next/link-passhref": "off",
+    "react/display-name": "off"
   }
 }

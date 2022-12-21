@@ -1,30 +1,29 @@
 import { ButtonIcon } from 'components/ButtonIcon'
+
 import { IconNames } from 'components/Icon'
+
 import { DARK_THEME, LIGHT_THEME } from 'constants/theme'
+
 import { useTheme } from 'providers'
-import { memo } from 'react'
 
 import * as Styles from './styles'
 
-interface HeaderProps {}
-
-function BaseHeader (props: HeaderProps) {
+export function Header () {
   const theme = useTheme()
 
-  console.log(theme)
   const themeIcon: Record<string, IconNames> = {
     [DARK_THEME]: 'moon',
     [LIGHT_THEME]: 'daySunny'
   }
 
+  const name = themeIcon[theme?.currentTheme] || 'moon'
+
   return (
     <Styles.Header>
       <ButtonIcon 
-        icon={{ name: themeIcon[theme?.currentTheme] || 'moon' }}
+        icon={{ name }}
         onClick={theme?.toggleTheme}
       />
     </Styles.Header>
   )
 }
-
-export const Header = memo(BaseHeader)

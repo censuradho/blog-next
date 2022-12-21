@@ -1,22 +1,10 @@
-import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 
 import { ThemeProvider } from 'providers'
-import { ReactElement, ReactNode } from 'react'
 import { Header as TopHeader } from 'components'
 
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
-
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? ((page) => page)
-
-  return getLayout(
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
     <ThemeProvider>
       <TopHeader />
       <Component {...pageProps} />
@@ -24,4 +12,3 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   )
 }
 
-export default MyApp

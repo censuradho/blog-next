@@ -7,7 +7,7 @@ export const Title = styled('h2', {
   lineHeight: '2.9rem'
 })
 
-export const Link = styled('a', {
+export const Link = styled('span', {
   textDecoration: 'none',
   color: 'inherit',
   fontFamily: 'inherit',

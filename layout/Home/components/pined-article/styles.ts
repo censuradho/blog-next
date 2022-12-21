@@ -15,7 +15,7 @@ export const Title = styled('h2', {
   fontFamily: '$title',
 })
 
-export const Link = styled('a', {
+export const LinkText = styled('span', {
   textDecoration: 'none',
   color: 'inherit',
   fontFamily: 'inherit',
@@ -41,12 +41,4 @@ export const CreatedAt = styled('span', {
 export const ReadTime = styled('span', {
   color: '$body',
   fontSize: '$sm',
-})
-
-export const Tag = styled('a', {
-  color: 'white',
-  background: '$primary',
-  fontWeight: 'medium',
-  fontSize: '$sm',
-  textDecoration: 'none',
 })

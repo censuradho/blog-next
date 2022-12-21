@@ -16,9 +16,9 @@ interface IconProps {
 
 
 function BaseIcon ({ name, color, customColor, ...props }: IconProps) {
-  const Component = icons[name]
+  const Component = icons?.[name]
   const { theme } = useTheme()
-  
+
   return (
     <Component 
       size={20} 
