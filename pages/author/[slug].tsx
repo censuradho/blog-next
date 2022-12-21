@@ -1,56 +1,10 @@
 import { Author, PostOrPage } from "@tryghost/content-api"
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPageWithLayout } from "next"
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next"
 
 import { getAuthor, getAuthors, getPosts } from "lib/ghost"
 
-import * as Styles from 'style/Author'
-import * as DefaultStyles from 'style/DefaultStyles'
-
-import { Avatar } from "components"
-import { SubArticle } from "components/pages/Home"
-import { Flex } from "style/Flex"
-import { ReactElement, useState } from "react"
 import { MainLayout } from "layout"
-
-const Author: NextPageWithLayout<InferGetStaticPropsType<typeof getStaticProps>> = ({ author, posts }) =>  {
-  const [_posts, setPosts] = useState(posts)
-
-  const renderArticles = _posts?.map((value, index) => (
-    <SubArticle 
-      key={index}
-      title={value?.title}
-      createdAt={value?.created_at}
-      readTime={value?.reading_time}
-      slug={value.slug}
-      author={{
-        avatarUrl: value?.authors?.[0]?.profile_image || '',
-        name: value?.authors?.[0]?.name,
-        slug: value?.authors?.[0]?.slug || ''
-      }}
-      tags={value?.tags?.map(value => ({
-        label: value?.name || '',
-        slug: value?.slug
-      })) || []}
-    />
-  ))
-
-  return (
-    <Styles.Main>
-      <DefaultStyles.Hero>
-        <Avatar size="lg" src={author?.profile_image as string} alt={author?.name} />
-        <DefaultStyles.Title>{author?.name}</DefaultStyles.Title>
-        <DefaultStyles.Description>{author?.bio}</DefaultStyles.Description>
-        <DefaultStyles.Amount>{`${author?.count?.posts} Posts`}</DefaultStyles.Amount>
-      </DefaultStyles.Hero>
-      <Styles.Container>
-        <Styles.Section>
-          <Flex column gap="sm">{renderArticles}</Flex>
-        </Styles.Section>
-      </Styles.Container>
-    </Styles.Main>
-  )
-}
-
+import { AuthorLayout } from "layout/author"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const authors = await getAuthors()
@@ -84,13 +38,10 @@ export const getStaticProps: GetStaticProps<{ author: Author, posts: PostOrPage[
   }
 }
 
-Author.getLayout = (page: ReactElement) => {
+export default function AuthorPage (props: InferGetStaticPropsType<typeof getStaticProps>)  {
   return (
     <MainLayout>
-      {page}
+      <AuthorLayout {...props}/>
     </MainLayout>
   )
 }
-
-
-export default Author

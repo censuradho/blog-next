@@ -1,32 +1,25 @@
-import { formatPostDate } from 'lib/dateFns'
-import { memo } from 'react'
 import Link from 'next/link'
-
-import * as Styles from './styles'
 import Image from 'next/image'
+
+import { formatPostDate } from 'lib/dateFns'
+
 import { Flex } from 'style/Flex'
+
 import { Tag } from 'components/Tag'
 
+import * as Styles from './styles'
+import type { ArticleProps } from './types'
 
-interface Tag {
-  slug: string;
-  label: string
-}
+export function Article (props: ArticleProps) {
+  const { 
+    title, 
+    createdAt, 
+    readTime, 
+    slug, 
+    author, 
+    tags = [] 
+  } = props
 
-interface SubArticleProps {
-  title?: string
-  createdAt?: string
-  readTime?: number
-  slug: string;
-  author?: {
-    avatarUrl?: string;
-    name?: string;
-    slug: string
-  };
-  tags?: Tag[]
-}
-
-function BaseSubArticle ({ title, createdAt, readTime, slug, author, tags = [] }: SubArticleProps) {
   const formateDate = createdAt && formatPostDate(createdAt)
 
   
@@ -49,7 +42,7 @@ function BaseSubArticle ({ title, createdAt, readTime, slug, author, tags = [] }
       <Flex gap="sm" alignItems="center">
         {author?.avatarUrl && (
           <Styles.AvatarContainer>
-            <Image src={author?.avatarUrl} alt={author?.name} layout="fill" />
+            <Image src={author?.avatarUrl} alt={author?.name || ''} layout="fill" />
           </Styles.AvatarContainer>
         )}
         <Flex column gap="xs" alignItems="flex-start">
@@ -69,5 +62,3 @@ function BaseSubArticle ({ title, createdAt, readTime, slug, author, tags = [] }
     </Styles.Container>
   )
 }
-
-export const SubArticle = memo(BaseSubArticle)

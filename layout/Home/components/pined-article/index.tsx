@@ -21,7 +21,15 @@ interface ArticleProps {
   tags: Tag[]
 }
 
-function BaseArticle ({ title, tags, createdAt, readTime, slug }: ArticleProps) {
+export function PinedArticle (props: ArticleProps) {
+  const { 
+    title, 
+    tags, 
+    createdAt, 
+    readTime, 
+    slug
+  } = props
+
   const formateDate = createdAt && formatPostDate(createdAt)
 
   const renderTags = tags?.map((value, index) => (
@@ -33,9 +41,9 @@ function BaseArticle ({ title, tags, createdAt, readTime, slug }: ArticleProps) 
       <Styles.CreatedAt>Latest — {formateDate} <Styles.ReadTime> • {`  ${readTime} min read`}</Styles.ReadTime></Styles.CreatedAt>
       <Styles.Title>
         <Link href={slug}>
-          <Styles.Link>
+          <Styles.LinkText>
             {title}
-          </Styles.Link>
+          </Styles.LinkText>
         </Link>
       </Styles.Title>
       <Flex gap="sm">{renderTags}</Flex>
@@ -43,4 +51,3 @@ function BaseArticle ({ title, tags, createdAt, readTime, slug }: ArticleProps) 
   )
 }
 
-export const Article = memo(BaseArticle)

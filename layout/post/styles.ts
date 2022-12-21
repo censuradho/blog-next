@@ -74,7 +74,7 @@ export const Footer = styled('footer', {
   marginTop: '4rem'
 })
 
-export const Link = styled('a', {
+export const Link = styled('span', {
   textDecoration: 'none',
   color: 'inherit',
   cursor: 'pointer'
