@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<{ author: Author, posts: PostOrPage[
   }
 }
 
-export default function Author (props: InferGetStaticPropsType<typeof getStaticProps>)  {
+export default function AuthorPage (props: InferGetStaticPropsType<typeof getStaticProps>)  {
   return (
     <MainLayout>
       <AuthorLayout {...props}/>
