@@ -11,5 +11,5 @@ export function parseToVariant <T>(obj: Record<string, string>, property: keyof 
   .reduce((prev, next) => ({
     ...prev,
     ...next
-  })) as T
+  }), {}) as unknown as T
 }
