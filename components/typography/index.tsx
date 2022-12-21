@@ -12,6 +12,7 @@ export function Typography (props: TypographyProps) {
       style={{ 
         color: theme.colors[color || 'text'].value 
       }}
+      {...otherProps}
     >
       {children}
     </Styles.Typography>

@@ -1,50 +1,18 @@
 import { createStitches } from '@stitches/react'
+import { colors } from 'constants/theme/colors'
+import { fonts } from 'constants/theme/fonts'
+import { fontSizes } from 'constants/theme/fontSizes'
+import { media } from 'constants/theme/media'
+import { space } from 'constants/theme/space'
 
 const { styled, globalCss: GlobalCss, getCssText, theme, css, keyframes, createTheme } = createStitches({
   theme: {
-    colors: {
-      background: '#f1f2f5',
-			foreground: '#EFE9E2',
-      text: '#1D1B1A',
-			body: '#757575',
-			invertBackground: '#000',
-			invertText: '#f1f2f5',
-			lightGray: '#c5d2d9',
-      alert: '#F8E176',
-      primary: 'rgba(0,118,255,.9)',
-			green: '#45c32e',
-			red: '#ef1818',
-    },
-    space: {
-      xs: '0.85rem',
-			sm: '1.5rem',
-			md: '3rem',
-			lg: '4.3rem',
-			xlg: '5rem',
-    },
-		fonts: {
-			title: 'Libre Bodoni, serif',
-			text: 'Poppins, sans-serif'
-		},
-    fontSizes: {
-			xs: '0.85rem',
-			sm: '1rem',
-			md: '1.8rem',
-			lg: '2rem',
-			xlg: '2.5rem',
-		},
+    colors,
+    space,
+		fonts,
+    fontSizes,
   },
-	media: {
-		xs: '(min-width: 28.125rem)',
-		sm: '(min-width: 40rem)',
-		md: '(min-width: 45.625rem)',
-		lg: '(min-width: 64rem)',
-		rxs: '(max-width: 28.125rem)',
-		rsm: '(max-width: 40rem)',
-		rmd: '(max-width: 45.625rem)',
-		rlg: '(max-width: 64rem)',
-		dark: '(prefers-color-scheme: dark)',
-	},
+	media,
 })
 
 const globalStyle =  GlobalCss({
