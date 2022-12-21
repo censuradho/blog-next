@@ -1,7 +1,7 @@
 import { Author } from '@tryghost/content-api'
 import { Avatar, Tag } from 'components'
+import { Image } from 'components/common/image'
 import { formatPostDate } from 'lib/dateFns'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Flex } from 'style/Flex'
 import * as Styles from './styles'
@@ -15,6 +15,8 @@ export function PostLayout (props: PostProps) {
   const renderTags = post?.tags?.map((value, index) => (
     <Tag key={index} href={`/tag/${value.slug}`}>{value?.name || ''}</Tag>
   ))
+
+  console.log(post)
 
   return (
     <Styles.Main>

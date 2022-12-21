@@ -9,6 +9,7 @@ import { getPost, getPosts } from "lib/ghost";
 
 import { MainLayout } from "layout";
 import { PostLayout } from "layout/post";
+import { Head } from "components";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPosts()
@@ -40,6 +41,10 @@ export const getStaticProps: GetStaticProps<{ post: PostOrPage}> = async (contex
 export default function Post (props: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <MainLayout>
+      <Head 
+        title={props.post.meta_title || ''}
+        description={props.post.meta_description || ''}
+      />
       <PostLayout {...props} />
     </MainLayout>
   )

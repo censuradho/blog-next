@@ -5,6 +5,7 @@ import { getAuthor, getAuthors, getPosts } from "lib/ghost"
 
 import { MainLayout } from "layout"
 import { AuthorLayout } from "layout/author"
+import { Head } from "components"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const authors = await getAuthors()
@@ -41,6 +42,10 @@ export const getStaticProps: GetStaticProps<{ author: Author, posts: PostOrPage[
 export default function AuthorPage (props: InferGetStaticPropsType<typeof getStaticProps>)  {
   return (
     <MainLayout>
+      <Head 
+        title={props.author.name || ''}
+        description={props?.author?.bio || ''}
+      />
       <AuthorLayout {...props}/>
     </MainLayout>
   )
