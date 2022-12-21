@@ -1,6 +1,6 @@
-import { ButtonIcon } from 'components/ButtonIcon'
+import { ButtonIcon } from 'components/button-icon'
 
-import { IconNames } from 'components/Icon'
+import { IconNames } from 'components/icon'
 
 import { DARK_THEME, LIGHT_THEME } from 'constants/theme'
 

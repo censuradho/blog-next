@@ -1,4 +1,4 @@
-import { ButtonIcon } from 'components/ButtonIcon'
+import { ButtonIcon } from 'components/button-icon'
 import { memo } from 'react'
 
 import * as Styles from './styles'
