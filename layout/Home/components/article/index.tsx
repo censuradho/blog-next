@@ -5,7 +5,7 @@ import { formatPostDate } from 'lib/dateFns'
 
 import { Flex } from 'style/Flex'
 
-import { Tag } from 'components/tag'
+import { Tag } from 'components/Tag'
 
 import * as Styles from './styles'
 import type { ArticleProps } from './types'

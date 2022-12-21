@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Flex } from 'style/Flex'
 
 import * as Styles from './styles'
-import { Tag } from 'components/tag';
+import { Tag } from 'components/Tag';
 
 interface Tag {
   slug: string;

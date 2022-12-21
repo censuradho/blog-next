@@ -1,4 +1,4 @@
-import { ButtonIcon } from 'components/button-icon'
+import { ButtonIcon } from 'components/ButtonIcon'
 
 import type { IconNames } from 'components/Icon'
 
