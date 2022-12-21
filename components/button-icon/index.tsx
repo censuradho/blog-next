@@ -1,6 +1,6 @@
 import { memo, ComponentProps, ButtonHTMLAttributes } from 'react'
 
-import { Icon } from 'components/icon'
+import { Icon } from 'components/Icon'
 
 import * as Styles from './styles'
 

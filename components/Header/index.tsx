@@ -1,6 +1,6 @@
 import { ButtonIcon } from 'components/button-icon'
 
-import type { IconNames } from 'components/icon'
+import type { IconNames } from 'components/Icon'
 
 import { DARK_THEME, LIGHT_THEME } from 'constants/theme'
 

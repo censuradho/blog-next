@@ -1,5 +1,5 @@
 export * from './header'
-export * from './icon'
+export * from './Icon'
 export * from './avatar'
 export * from './button-icon'
 export * from './tag'

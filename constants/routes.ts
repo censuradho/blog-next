@@ -1,4 +1,4 @@
-import { IconNames } from 'components/icon'
+import { IconNames } from 'components/Icon'
 
 interface RoutePaths {
   icon: IconNames,
