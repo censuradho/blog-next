@@ -1,10 +1,10 @@
-import GhostContentAPI, { Params } from "@tryghost/content-api";
+import GhostContentAPI, { GhostContentAPIOptions, Params } from "@tryghost/content-api";
 // 7478379a8daa1c8b90fd4aa8fa
 // http://localhost:2368
 const api = new GhostContentAPI({
-  url: 'https://censuradho.digitalpress.blog',
-  key: 'bdc1ec6adba0f1fcd0decfceac',
-  version: "v3"
+  url: process.env.GHOST_URL as string,
+  key: process.env.GHOST_KEY as string,
+  version: 'v3'
 });
 
 export async function getPosts(options?: Params) {
