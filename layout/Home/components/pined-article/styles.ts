@@ -35,10 +35,11 @@ export const CreatedAt = styled('span', {
   color: '$primary',
   textTransform: 'uppercase',
   fontSize: '$sm',
-  fontWeight: 'semi-bold'
+  fontWeight: '600'
 })
 
 export const ReadTime = styled('span', {
   color: '$body',
   fontSize: '$sm',
+  fontWeight: 500
 })

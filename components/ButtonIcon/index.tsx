@@ -7,14 +7,16 @@ import * as Styles from './styles'
 type IconProps = ComponentProps<typeof Icon>
 type RootButtonProps = Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'disabled'>
 
-
 interface ButtonIconProps extends RootButtonProps  {
   icon: IconProps
+  label: string
 }
 
-function BaseButtonIcon ({ icon, ...props }: ButtonIconProps) {
+function BaseButtonIcon (props: ButtonIconProps) {
+  const { icon, label, ...otherProps } = props
+
   return (
-    <Styles.Button {...props}>
+    <Styles.Button {...otherProps} aria-label={label}>
       <Icon {...icon} />
     </Styles.Button>
   )

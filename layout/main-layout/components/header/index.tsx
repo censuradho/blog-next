@@ -30,7 +30,8 @@ export function Header () {
           <Image src={Logo} layout="fill" alt="logo" />
         </Styles.LogoContainer>
       </Link>
-      <ButtonIcon 
+      <ButtonIcon
+        label="theme toggle"
         icon={{ name }}
         onClick={theme?.toggleTheme}
       />

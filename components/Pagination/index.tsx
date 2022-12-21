@@ -23,12 +23,14 @@ function BasePagination ({
   return (
     <Styles.Navigation>
       <ButtonIcon
+        label="backward pagination"
         disabled={_total === 1}
         icon={{ name: 'arrowLeft' }} 
         onClick={() => onChange?.(prev || current - 1)}
       />
       <Styles.Counter>{`${current} de ${_total}`}</Styles.Counter>
       <ButtonIcon
+        label="forward pagination"
         disabled={current === _total}
         icon={{ name: 'arrowRight' }} 
         onClick={() => onChange?.(next || current + 1)}

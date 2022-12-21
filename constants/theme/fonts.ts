@@ -5,7 +5,8 @@ const poppins = Poppins({
   variable: '--title',
 })
 const libreBodoni = Libre_Bodoni({
-  variable: '--text'
+  variable: '--text',
+  weight: ['600']
 })
 
 export const fonts = {
