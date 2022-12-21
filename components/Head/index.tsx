@@ -11,6 +11,7 @@ export function Head (props: HeadProps) {
     <NextHead>
       <title>{title}</title>
       <meta name="description" content={description}/>
+      <meta name="language-lp" content="pt-BR" />
     </NextHead>
   )
 }

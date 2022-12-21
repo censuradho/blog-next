@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { formatPostDate } from 'lib/dateFns'
 
@@ -9,6 +8,7 @@ import { Tag } from 'components/Tag'
 
 import * as Styles from './styles'
 import type { ArticleProps } from './types'
+import Image from 'next/image'
 
 export function Article (props: ArticleProps) {
   const { 

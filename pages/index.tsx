@@ -5,6 +5,7 @@ import { PostsOrPages, Pagination as PaginationMeta } from '@tryghost/content-ap
 import { getPosts } from 'lib/ghost'
 
 import { HomeLayout, MainLayout } from 'layout'
+import { Head } from 'components'
 
 export const getStaticProps: GetStaticProps<{ post: PostsOrPages, meta: PaginationMeta }> = async(context) => {
 
@@ -32,6 +33,10 @@ export const getStaticProps: GetStaticProps<{ post: PostsOrPages, meta: Paginati
 function Page (props: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <MainLayout>
+      <Head 
+          title="Blog: Template using Next.js and Ghost CMS" 
+          description="Exemple of blog using Next.js and Ghost CMS"
+        />
       <HomeLayout {...props} />
     </MainLayout>
   )

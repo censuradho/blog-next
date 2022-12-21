@@ -4,6 +4,8 @@ import { getPosts, getTag, getTags } from 'lib/ghost'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 
 import { TagLayout } from 'layout/tag';
+import { MainLayout } from 'layout';
+import { Head } from 'components';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tag = await getTags()
@@ -42,6 +44,12 @@ export const getStaticProps: GetStaticProps<{ posts: PostOrPage[], tag: Tag }> =
 export default function TagPage (props: InferGetStaticPropsType<typeof getStaticProps>) {
 
   return (
-    <TagLayout {...props}/>
+    <MainLayout>
+      <Head 
+          title={props.tag.meta_title || ''}
+          description={props.tag.meta_description || ''}
+        />
+      <TagLayout {...props}/>
+    </MainLayout>
   )
 }
