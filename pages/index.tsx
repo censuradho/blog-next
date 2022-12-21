@@ -4,7 +4,7 @@ import { PostsOrPages, Pagination as PaginationMeta } from '@tryghost/content-ap
 
 import { getPosts } from 'lib/ghost'
 
-import { HomeLayout } from 'layout'
+import { HomeLayout, MainLayout } from 'layout'
 
 export const getStaticProps: GetStaticProps<{ post: PostsOrPages, meta: PaginationMeta }> = async(context) => {
 
@@ -31,7 +31,9 @@ export const getStaticProps: GetStaticProps<{ post: PostsOrPages, meta: Paginati
 
 function Page (props: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <HomeLayout {...props} />
+    <MainLayout>
+      <HomeLayout {...props} />
+    </MainLayout>
   )
 }
 

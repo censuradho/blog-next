@@ -1,22 +1,13 @@
 import { styled } from "stitches.config";
 
 export const Header = styled('header', {
-  height: '100%',
+  width: '100%',
   borderRight: '1px solid $lightGray',
-  width: '4.37rem',
   display: 'flex',
-  flexDirection: 'column',
+  justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '1.2rem 0',
-
-  '@rmd': {
-    width: '100%',
-    maxHeight: '4rem',
-    alignItems: 'center',
-    flexDirection: 'row-reverse',
-    padding: '0 1.2rem',
-    borderTop: '1px solid $lightGray',
-  }
+  padding: '1.2rem',
+  borderBottom: '1px solid $lightGray',
 })
 
 export const LogoContainer = styled('div', {
