@@ -49,7 +49,7 @@ export default function TagPage (props: InferGetStaticPropsType<typeof getStatic
       <Head 
           title={props.tag.meta_title || ''}
           description={props.tag.meta_description || ''}
-          image={Logo as any as string}
+          image={Logo.src as any as string}
         />
       <TagLayout {...props}/>
     </MainLayout>
