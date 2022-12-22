@@ -127,5 +127,10 @@ To host Ghost cms with a very generous free plan, i recommend Digital press.
 
 For best SEO results it is strongly recommended to disable the default Ghost Handlebars theme front-end by selecting the _Make this site private_ flag within your Ghost admin settings.
 
+## Analytics metrics
+
+According to Lighthouse
+
+![image](https://user-images.githubusercontent.com/49209628/209133706-7f54544d-61f9-4551-ace4-ef98144122a0.png)
 
 
