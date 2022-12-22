@@ -45,6 +45,16 @@ export default function Post (props: InferGetStaticPropsType<typeof getStaticPro
         title={props.post.meta_title || ''}
         description={props.post.meta_description || ''}
         image={props.post?.feature_image as string}
+        og={{
+          description: props.post.og_description as string,
+          title: props.post.og_title as string,
+          image: props.post.og_image as string,
+        }}
+        twitter={{
+          description: props.post.twitter_description as string,
+          title: props.post.twitter_title as string,
+          image: props.post.twitter_image as string,
+        }}
       />
       <PostLayout {...props} />
     </MainLayout>

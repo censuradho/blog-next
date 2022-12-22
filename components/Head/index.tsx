@@ -5,7 +5,9 @@ export function Head (props: HeadProps) {
   const {
     description,
     title,
-    image
+    image,
+    og,
+    twitter
   } = props
 
   return (
@@ -15,12 +17,13 @@ export function Head (props: HeadProps) {
       <meta name="language-lp" content="pt-BR" />
       <meta property="og:locale" content="pt-BR" />
       <meta property="og:type" content="article" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      {image && <meta property="og:image" content={image} />}
+      <meta property="og:title" content={og?.title || title} />
+      <meta property="og:description" content={og?.description || description} />
+      {image && <meta property="og:image" content={og?.image || image} />}
       <meta name="twitter:card" content="summary" />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:image" content={image} />
+      <meta property="twitter:title" content={twitter?.title || title} />
+      <meta property="twitter:image" content={twitter?.image || image} />
+      <meta property="twitter:description" content={twitter?.description || description} />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
 
@@ -30,8 +33,6 @@ export function Head (props: HeadProps) {
       <link rel="shortcut icon" href="/public/favicon-32x32.png" type="image/png" />
       <link rel="manifest" href="public/site.webmanifest" />
       <link rel="mask-icon" href="public/safari-pinned-tab.svg" color="#5bbad5" />
-
-
     </NextHead>
   )
 }

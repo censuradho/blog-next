@@ -16,7 +16,6 @@ export function PostLayout (props: PostProps) {
     <Tag key={index} href={`/tag/${value.slug}`}>{value?.name || ''}</Tag>
   ))
 
-
   return (
     <Styles.Main>
       <Styles.Section>

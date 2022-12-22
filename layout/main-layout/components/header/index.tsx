@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Image } from 'components/common'
+import { Container, Image } from 'components/common'
 import { ButtonIcon, IconNames } from 'components'
 
 import { routePaths } from 'constants/routes'
@@ -13,6 +13,7 @@ import * as Styles from './styles'
 import { useTheme } from 'providers'
 
 import { DARK_THEME, LIGHT_THEME } from 'constants/theme'
+import { Flex } from 'style/Flex'
 
 export function Header () {
   const theme = useTheme()
@@ -27,21 +28,25 @@ export function Header () {
 
   return (
     <Styles.Header>
-      <Link href={routePaths.home.path}>
-        <Styles.LogoContainer>
-          <Image 
-            src={Logo} 
-            width={48} 
-            height={48} 
-            alt="logo" 
+      <Container>
+        <Flex justifyContent="space-between" alignItems="center">
+          <Link href={routePaths.home.path}>
+            <Styles.LogoContainer>
+              <Image 
+                src={Logo} 
+                width={48} 
+                height={48} 
+                alt="logo" 
+              />
+            </Styles.LogoContainer>
+          </Link>
+          <ButtonIcon
+            label="theme toggle"
+            icon={{ name }}
+            onClick={theme?.toggleTheme}
           />
-        </Styles.LogoContainer>
-      </Link>
-      <ButtonIcon
-        label="theme toggle"
-        icon={{ name }}
-        onClick={theme?.toggleTheme}
-      />
+        </Flex>
+      </Container>
     </Styles.Header>
   )
 }
