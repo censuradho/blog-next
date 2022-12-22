@@ -114,10 +114,9 @@ For best results, deploying to Vercel is recommended. As an alternative, you can
 
 ### (Optional) GHOST Host
 
-To host Ghost cms with a very generous free plan I recommend Digital press
+To host Ghost cms with a very generous free plan, i recommend Digital press.
 
-[![Deploy with Digitalpress](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/censuradho/blog-next)
-
+[![Deploy with Digitalpress](https://www.digitalpress.blog/images/digitalpress-logo.d8de65d.svg)](https://www.digitalpress.blog/)
 
 &nbsp;
 
