@@ -9,6 +9,7 @@ import { Tag } from 'components/Tag'
 import * as Styles from './styles'
 import type { ArticleProps } from './types'
 import Image from 'next/image'
+import { Avatar } from 'components'
 
 export function Article (props: ArticleProps) {
   const { 
@@ -41,16 +42,11 @@ export function Article (props: ArticleProps) {
       </Flex>
       <Flex gap="sm" alignItems="center">
         {author?.avatarUrl && (
-          <Styles.AvatarContainer>
-            <Image
-              width={48}
-              height={48}
+            <Avatar
+              size={50}
               src={author?.avatarUrl} 
               alt={author?.name || ''}  
-              blurDataURL={author?.avatarUrl} 
-              placeholder="blur"  
             />
-          </Styles.AvatarContainer>
         )}
         <Flex column gap="xs" alignItems="flex-start">
           <Styles.Username>

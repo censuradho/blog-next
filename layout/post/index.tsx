@@ -47,7 +47,7 @@ export function PostLayout (props: PostProps) {
         <Styles.Section>
           <Styles.Container>
             <Flex gap="sm" alignItems="center" fullWidth justifyContent="center">
-              <Avatar size={45} src={author?.profile_image as string} alt={author?.name as string} />
+              <Avatar size={60} src={author?.profile_image as string} alt={author?.name as string} />
               <Link href={`/author/${author?.slug}`}>
                 <Styles.Link>
                   <Styles.Username>{author?.name}</Styles.Username> 

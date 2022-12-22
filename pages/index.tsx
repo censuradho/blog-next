@@ -37,7 +37,7 @@ function Page (props: InferGetStaticPropsType<typeof getStaticProps>) {
       <Head 
           title="Blog: Template using Next.js and Ghost CMS" 
           description="Exemple of blog using Next.js and Ghost CMS"
-          image={Logo.src as any as string}
+          image={Logo as any as string}
         />
       <HomeLayout {...props} />
     </MainLayout>

@@ -7,7 +7,7 @@ import * as Styles from './styles'
 
 type ImageProps = Pick<ComponentProps<typeof Image>, 'priority' | 'alt'>
 interface AvatarProps extends ImageProps{
-  src?: string;
+  src: string;
   size?: number
 }
 
@@ -20,17 +20,18 @@ function BaseAvatar (props: AvatarProps) {
   } = props
 
   return (
-    <Styles.Container>
-      {src && <Image 
+      <Image 
         src={src} 
         alt={alt} 
         width={size}
         height={size} 
         blurDataURL={src} 
         placeholder="blur"
+        style={{
+          borderRadius: '50%'
+        }}
         {...otherProps}
-      />}
-    </Styles.Container>
+      />
   )
 }
 
