@@ -1,4 +1,5 @@
 import { PostOrPage, Tag } from '@tryghost/content-api'
+import Logo from 'public/logo.webp'
 
 import { getPosts, getTag, getTags } from 'lib/ghost'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -48,6 +49,7 @@ export default function TagPage (props: InferGetStaticPropsType<typeof getStatic
       <Head 
           title={props.tag.meta_title || ''}
           description={props.tag.meta_description || ''}
+          image={Logo as any as string}
         />
       <TagLayout {...props}/>
     </MainLayout>

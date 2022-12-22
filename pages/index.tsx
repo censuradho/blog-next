@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostsOrPages, Pagination as PaginationMeta } from '@tryghost/content-api'
 
+import Logo from 'public/logo.webp'
 
 import { getPosts } from 'lib/ghost'
 
@@ -36,6 +37,7 @@ function Page (props: InferGetStaticPropsType<typeof getStaticProps>) {
       <Head 
           title="Blog: Template using Next.js and Ghost CMS" 
           description="Exemple of blog using Next.js and Ghost CMS"
+          image={Logo as any as string}
         />
       <HomeLayout {...props} />
     </MainLayout>
