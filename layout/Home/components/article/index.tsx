@@ -42,7 +42,9 @@ export function Article (props: ArticleProps) {
       <Flex gap="sm" alignItems="center">
         {author?.avatarUrl && (
           <Styles.AvatarContainer>
-            <Image 
+            <Image
+              width={48}
+              height={48}
               src={author?.avatarUrl} 
               alt={author?.name || ''}  
               blurDataURL={author?.avatarUrl} 

@@ -41,8 +41,6 @@ export const Tag = styled('a', {
 })
 
 export const AvatarContainer = styled('div', {
-  width: '3rem',
-  height: '3rem',
   borderRadius: '50%',
   overflow: 'hidden',
   position: 'relative'
