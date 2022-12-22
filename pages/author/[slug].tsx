@@ -50,6 +50,7 @@ export default function AuthorPage (props: InferGetStaticPropsType<typeof getSta
       <Head 
         title={props.author.name || ''}
         description={props?.author?.bio || ''}
+        image={props.author?.profile_image as string}
       />
       <AuthorLayout {...props}/>
     </MainLayout>

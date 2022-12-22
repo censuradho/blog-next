@@ -44,6 +44,7 @@ export default function Post (props: InferGetStaticPropsType<typeof getStaticPro
       <Head 
         title={props.post.meta_title || ''}
         description={props.post.meta_description || ''}
+        image={props.post?.feature_image as string}
       />
       <PostLayout {...props} />
     </MainLayout>
