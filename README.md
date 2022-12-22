@@ -1,4 +1,4 @@
-# Blog | Next frontend for headless GHOST CMS
+# Blog | Next.js in the frontend, for headless GHOST CMS.
 
 
 <img src="https://user-images.githubusercontent.com/49209628/209132766-290ffee8-173e-4bb7-96f3-7bfbd4df8ce8.png" width="400px" alt=""/>
