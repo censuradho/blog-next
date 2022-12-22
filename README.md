@@ -49,7 +49,7 @@ Create and publish flaring fast blogs with <i>next-cms-ghost</i>. Powered by the
 <summary>Integrated Plugins</summary>
 <br />
 <ul>
-  <li>Google Analytics</li> 
+  <li>Google Analytics 4</li> 
 </ul>
 </details>
 <details>
@@ -76,9 +76,9 @@ yarn dev
 yarn build
 ```
 
-## 🔑 Ghost Content API keys
+## 🔑 Enviroment vars 
 
-All content is sourced from a Ghost CMS. Choose the method according to your build scenario.
+Choose the method according to your build scenario.
 
 ### Building locally
 
@@ -87,22 +87,24 @@ Create a new text file `.env.local` in the project root folder with the followin
 ```
 CMS_GHOST_API_URL=http://localhost:2368
 CMS_GHOST_API_KEY=9fccdb0e4ea5b572e2e5b92942
+NEXT_PUBLIC_GOOGLE_ANALYTICS= G-xxxxxxxxxx
 ```
 
 Change `CMS_GHOST_API_URL` and `CMS_GHOST_API_KEY` with the values that you can generate in your Ghost Admin under `Integrations`.
+
+Analytics is using the Google Analytics 4, create a new property on console to get the key.
 
 ### Building with cloud providers
 
 If you build your project with a cloud provider, the best option is to provide the keys with environment variables:
 
-| Key               | Value (example)              |
-| ----------------- | ---------------------------- |
-| CMS_GHOST_API_URL | https:\/\/your-ghost-cms.org |
-| CMS_GHOST_API_KEY | 9fccdb0e4ea5b572e2e5b92942   |
+| Key                          | Value (example)              |
+| ---------------------------- | ---------------------------- |
+| GHOST_URL                    | https:\/\/your-ghost-cms.org |
+| GHOST_KEY                    | 9fccdb0e4ea5b572e2e5b92942   |
+| NEXT_PUBLIC_GOOGLE_ANALYTICS | 9fccdb0e4ea5b572e2e5b92942   |
 
 &nbsp;
-
-## 💫 Deploy
 
 For best results, deploying to Vercel is recommended. As an alternative, you can also deploy to Netlify.
 
@@ -110,9 +112,18 @@ For best results, deploying to Vercel is recommended. As an alternative, you can
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/censuradho/blog-next&utm_source=github)
 
+### (Optional) GHOST Host
+
+To host Ghost cms with a very generous free plan I recommend Digital press
+
+[![Deploy with Digitalpress](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/censuradho/blog-next)
+
+
 &nbsp;
 
 ## 🤯 Ensure headless mode of Ghost CMS
 
 For best SEO results it is strongly recommended to disable the default Ghost Handlebars theme front-end by selecting the _Make this site private_ flag within your Ghost admin settings.
+
+
 
