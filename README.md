@@ -1,5 +1,8 @@
 # Blog | Next frontend for headless GHOST CMS
 
+
+<img src="https://user-images.githubusercontent.com/49209628/209132766-290ffee8-173e-4bb7-96f3-7bfbd4df8ce8.png" width="400px" alt=""/>
+
 Create and publish flaring fast blogs with <i>next-cms-ghost</i>. Powered by the React framework Next.js and content fed by headless Ghost, you'll get a production ready hybrid frontend that combines the best of static and server-rendered sites. Most importantly, your website can be easily distributed globally to be served from the edge. At the same time your content creators can continue to work with the Ghost authoring system they are used to.
 
 ## ✨ Features
