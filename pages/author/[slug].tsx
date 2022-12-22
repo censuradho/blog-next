@@ -21,14 +21,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<{ author: Author, posts: PostOrPage[] }> = async (context) => {
   const slug = context?.params?.slug as string
 
-  const author = await getAuthor(slug, {
+  const authorData = getAuthor(slug, {
     include: ['count.posts'],
   })
 
-  const posts = await getPosts({
-    filter: `authors.slug:[${author.slug}]`,
+  const postsData = getPosts({
+    filter: `authors.slug:[${slug}]`,
     limit: 10
   })
+
+  const [author, posts] = await Promise.all([
+    authorData,
+    postsData
+  ])
 
   return {
     props: {

@@ -16,7 +16,6 @@ export function PostLayout (props: PostProps) {
     <Tag key={index} href={`/tag/${value.slug}`}>{value?.name || ''}</Tag>
   ))
 
-  console.log(post)
 
   return (
     <Styles.Main>
@@ -27,7 +26,14 @@ export function PostLayout (props: PostProps) {
               {post?.feature_image && (
                 <Styles.Figure>
                   <figcaption>{post?.feature_image_caption}</figcaption>
-                  <Image src={post?.feature_image} alt={post?.feature_image_alt || ''} layout="fill" />
+                  <Image 
+                    src={post?.feature_image} 
+                    alt={post?.feature_image_alt || ''} 
+                    fill 
+                    priority
+                    placeholder="blur"
+                    blurDataURL={post?.feature_image}
+                  />
                 </Styles.Figure>
               )}
             </Styles.ImageHeroContainer>
@@ -41,7 +47,7 @@ export function PostLayout (props: PostProps) {
         <Styles.Section>
           <Styles.Container>
             <Flex gap="sm" alignItems="center" fullWidth justifyContent="center">
-              <Avatar size="md" src={author?.profile_image as string} alt={author?.name} />
+              <Avatar size={45} src={author?.profile_image as string} alt={author?.name as string} />
               <Link href={`/author/${author?.slug}`}>
                 <Styles.Link>
                   <Styles.Username>{author?.name}</Styles.Username> 

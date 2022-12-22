@@ -35,7 +35,12 @@ export function AuthorLayout (props: AuthorProps) {
   return (
     <Styles.Main>
       <DefaultStyles.Hero>
-        <Avatar size="lg" src={author?.profile_image as string} alt={author?.name} />
+        <Avatar 
+          size={200} 
+          src={author?.profile_image as string} 
+          alt={author?.name as string}
+          priority
+        />
         <DefaultStyles.Title>{author?.name}</DefaultStyles.Title>
         <DefaultStyles.Description>{author?.bio}</DefaultStyles.Description>
         <DefaultStyles.Amount>{`${author?.count?.posts} Posts`}</DefaultStyles.Amount>

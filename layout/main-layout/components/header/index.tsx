@@ -1,15 +1,17 @@
-import { useRouter } from 'next/router'
-import Image from 'next/image'
 import Link from 'next/link'
+
+import { Image } from 'components/common'
+import { ButtonIcon, IconNames } from 'components'
 
 import { routePaths } from 'constants/routes'
 
-import Logo from 'assets/logo.webp'
-
+import Logo from 'public/logo.webp'
 
 import * as Styles from './styles'
-import { ButtonIcon, IconNames } from 'components'
+
+
 import { useTheme } from 'providers'
+
 import { DARK_THEME, LIGHT_THEME } from 'constants/theme'
 
 export function Header () {
@@ -27,7 +29,12 @@ export function Header () {
     <Styles.Header>
       <Link href={routePaths.home.path}>
         <Styles.LogoContainer>
-          <Image src={Logo} layout="fill" alt="logo" />
+          <Image 
+            src={Logo} 
+            width={48} 
+            height={48} 
+            alt="logo" 
+          />
         </Styles.LogoContainer>
       </Link>
       <ButtonIcon

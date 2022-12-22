@@ -7,8 +7,6 @@ export const Image = memo((props: ImageProps) => {
   return (
     <NextImage
       {...props}
-      placeholder="blur"
-      blurDataURL={props?.src as string}
     />
   );
 });

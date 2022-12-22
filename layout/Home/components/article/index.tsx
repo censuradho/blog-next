@@ -42,7 +42,12 @@ export function Article (props: ArticleProps) {
       <Flex gap="sm" alignItems="center">
         {author?.avatarUrl && (
           <Styles.AvatarContainer>
-            <Image src={author?.avatarUrl} alt={author?.name || ''} layout="fill" />
+            <Image 
+              src={author?.avatarUrl} 
+              alt={author?.name || ''}  
+              blurDataURL={author?.avatarUrl} 
+              placeholder="blur"  
+            />
           </Styles.AvatarContainer>
         )}
         <Flex column gap="xs" alignItems="flex-start">

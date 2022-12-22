@@ -1,19 +1,35 @@
-import Image from 'next/image';
-import { ComponentProps, memo } from 'react'
+
+import { memo, ComponentProps } from 'react'
+import { Image } from 'components/common';
 
 import * as Styles from './styles'
 
-type AvatarStyleProps = Pick<ComponentProps<typeof Styles.Container>, 'size'>
 
-interface AvatarProps extends AvatarStyleProps {
+type ImageProps = Pick<ComponentProps<typeof Image>, 'priority' | 'alt'>
+interface AvatarProps extends ImageProps{
   src?: string;
-  alt?: string
+  size?: number
 }
 
-function BaseAvatar ({ src, alt = '', size }: AvatarProps) {
+function BaseAvatar (props: AvatarProps) {
+  const { 
+    src, 
+    alt = '',
+    size = 48,
+    ...otherProps
+  } = props
+
   return (
-    <Styles.Container size={size}>
-      {src && <Image src={src} alt={alt} layout="fill" />}
+    <Styles.Container>
+      {src && <Image 
+        src={src} 
+        alt={alt} 
+        width={size}
+        height={size} 
+        blurDataURL={src} 
+        placeholder="blur"
+        {...otherProps}
+      />}
     </Styles.Container>
   )
 }
