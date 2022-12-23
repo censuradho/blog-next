@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Next.js Headless Ghost]]></title>
+        <description><![CDATA[blog system powered by Next.js and headless Ghost.]]></description>
+        <link>http://localhost:3000/</link>
+        <image>
+            <url>http://localhost:3000/favicon.png</url>
+            <title>Next.js Headless Ghost</title>
+            <link>http://localhost:3000/</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 23 Dec 2022 21:05:36 GMT</lastBuildDate>
+        <atom:link href="http://localhost:3000/rss/" rel="self" type="application/rss+xml"/>
+        <copyright><![CDATA[All rights reserved 2022, Ibas]]></copyright>
+        <ttl>60</ttl>
+        <item>
+            <title><![CDATA[Lo-fi: Why This Song Makes Your Brain Relax (And Who Are The Artists Behind It)]]></title>
+            <description><![CDATA[ the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.]]></description>
+            <link>http://localhost:3000/lo-fi-por-que-essa-musica-faz-seu-cerebro-relaxar-e-quem-sao-os-artistas-por-tras-dela/</link>
+            <guid isPermaLink="false">627038b7c696850001d25031</guid>
+            <pubDate>Mon, 02 May 2022 20:04:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Gothic band, The Cure]]></title>
+            <description><![CDATA[Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.]]></description>
+            <link>http://localhost:3000/lorem-ipsum-is-simply-dummy-text-of-the-printing-and-typesetting-industry/</link>
+            <guid isPermaLink="false">626b02d42d7f6a0001347e1a</guid>
+            <pubDate>Thu, 28 Apr 2022 21:15:21 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Coming soon]]></title>
+            <description><![CDATA[This is Censuradho, a brand new site by Gustavo Leite Oliveira that's just
+getting started. Things will be up and running here shortly, but you can 
+subscribe in the meantime if you'd like to stay up to date and receive emails
+when new content is published!]]></description>
+            <link>http://localhost:3000/coming-soon/</link>
+            <guid isPermaLink="false">626afd762d7f6a0001347c97</guid>
+            <pubDate>Thu, 28 Apr 2022 20:47:50 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
