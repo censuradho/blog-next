@@ -9,7 +9,7 @@
             <link>http://localhost:3000/</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 23 Dec 2022 21:05:36 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Dec 2022 21:48:16 GMT</lastBuildDate>
         <atom:link href="http://localhost:3000/rss/" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[All rights reserved 2022, Ibas]]></copyright>
         <ttl>60</ttl>

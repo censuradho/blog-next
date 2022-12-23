@@ -1,11 +1,19 @@
-import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { 
+	createContext, 
+	ReactNode, 
+	useCallback, 
+	useContext, 
+	useEffect, 
+	useMemo, 
+	useState 
+} from 'react'
 
 import { light, dark } from 'theme/'
-import { lightMode, darkMode, localStorageKey, themeStorageKey  } from 'config/app'
-
 import { globalStyle } from 'stitches.config'
 import { useLocalStorage } from 'hooks';
 import { isBrowser } from 'utils';
+
+import { darkMode, lightMode, themeStorageKey } from 'config/app'
 
 interface ThemeContextData {
   toggleTheme: () => void;
@@ -14,7 +22,6 @@ interface ThemeContextData {
 }
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
-
 interface ThemeProviderProps {
   children: ReactNode
 }
@@ -47,8 +54,6 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
 			setCurrentTheme(newColorScheme)
 		})
 	}, [_isBrowser])
-
-
 
 	const toggleTheme = useCallback(() => {
 		setCurrentTheme(prevState => prevState === lightMode ? darkMode : lightMode)

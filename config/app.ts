@@ -1,7 +1,7 @@
 export type DarkMode = 'dark' | 'light'
-export const defaultMode: DarkMode = 'light'
 export const lightMode: DarkMode = 'light'
-export const darkMode: DarkMode = 'light'
+export const darkMode: DarkMode = 'dark'
+export const defaultMode: DarkMode = lightMode
 
 /** RSS */
 export const rssFeed: boolean = true

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { Container, Image } from 'components/common'
 import { ButtonIcon, IconNames } from 'components'
 
+import { darkMode, lightMode } from 'config/app'
+
 import { routePaths } from 'constants/routes'
 
 import Logo from 'public/logo.webp'
@@ -12,15 +14,14 @@ import * as Styles from './styles'
 
 import { useTheme } from 'providers'
 
-import { DARK_THEME, LIGHT_THEME } from 'constants/theme'
 import { Flex } from 'style/Flex'
 
 export function Header () {
   const theme = useTheme()
 
   const themeIcon: Record<string, IconNames> = {
-    [DARK_THEME]: 'moon',
-    [LIGHT_THEME]: 'daySunny'
+    [darkMode]: 'moon',
+    [lightMode]: 'daySunny'
   }
 
   const name = themeIcon[theme?.currentTheme] || 'moon'
