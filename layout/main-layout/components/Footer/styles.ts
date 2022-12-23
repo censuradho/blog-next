@@ -7,4 +7,6 @@ export const Footer = styled('footer', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  flexDirection: 'column',
+  gap: '2rem'
 })

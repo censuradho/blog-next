@@ -5,14 +5,22 @@ import type {
   InferGetStaticPropsType
 } from "next";
 
-import { getPost, getPosts } from "lib/ghost";
+import { getAllSettings, getPost, getPosts } from "lib/ghost";
 
 import { MainLayout } from "layout";
 import { PostLayout } from "layout/post";
 import { Head } from "components";
+import { generateRssFeed } from "utils/rss";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPosts()
+
+  const settings = await getAllSettings()
+
+  await generateRssFeed({
+    posts,
+    settings
+  })
 
   const paths = posts?.map(value => ({ params: { slug: value.slug }}))
 
@@ -24,7 +32,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<{ post: PostOrPage}> = async (context) => {
   const slug = context?.params?.slug as string
-
   const post = await getPost(slug, {
     include: ['tags', 'authors']
   })

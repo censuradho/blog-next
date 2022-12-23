@@ -1,10 +1,19 @@
-import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { 
+	createContext, 
+	ReactNode, 
+	useCallback, 
+	useContext, 
+	useEffect, 
+	useMemo, 
+	useState 
+} from 'react'
 
 import { light, dark } from 'theme/'
-import { DARK_THEME, LIGHT_THEME  } from 'constants/theme'
 import { globalStyle } from 'stitches.config'
 import { useLocalStorage } from 'hooks';
 import { isBrowser } from 'utils';
+
+import { darkMode, lightMode, themeStorageKey } from 'config/app'
 
 interface ThemeContextData {
   toggleTheme: () => void;
@@ -13,13 +22,9 @@ interface ThemeContextData {
 }
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
-
 interface ThemeProviderProps {
   children: ReactNode
 }
-
-const LOCAL_STORAGE_KEY = '@censuradho'
-export const THEME_KEY = LOCAL_STORAGE_KEY ? `${LOCAL_STORAGE_KEY}:theme` : '@planningPoker:theme'
 
 export function ThemeProvider ({ children }: ThemeProviderProps) {
   const _isBrowser = isBrowser()
@@ -28,33 +33,30 @@ export function ThemeProvider ({ children }: ThemeProviderProps) {
     return _isBrowser && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   }, [_isBrowser])
 
-  const [themeStorage, setThemeStorage] = useLocalStorage(THEME_KEY, '')
+  const [themeStorage, setThemeStorage] = useLocalStorage(themeStorageKey, '')
   const [_isDarkThemePreferences, setIsDarkThemePreferences] = useState(getIsDarkThemePreferences())
 
 	const mapTheme = useMemo(() => ({
-		[DARK_THEME]: dark,
-		[LIGHT_THEME]: light
+		[darkMode]: dark,
+		[lightMode]: light
 	}), [])
 
 	const savedTheme = 
     themeStorage
-    || (_isDarkThemePreferences ? DARK_THEME : LIGHT_THEME)
+    || (_isDarkThemePreferences ? darkMode : lightMode)
 
 	const [currentTheme, setCurrentTheme] = useState(savedTheme)
 	const [theme, setTheme] = useState(mapTheme[currentTheme as keyof typeof mapTheme])
 
 	useEffect(() => {
 		_isBrowser && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-			const newColorScheme = event.matches ? DARK_THEME : LIGHT_THEME
+			const newColorScheme = event.matches ? darkMode : lightMode
 			setCurrentTheme(newColorScheme)
 		})
 	}, [_isBrowser])
 
-
-
 	const toggleTheme = useCallback(() => {
-		console.log(true)
-		setCurrentTheme(prevState => prevState === LIGHT_THEME ? DARK_THEME : LIGHT_THEME)
+		setCurrentTheme(prevState => prevState === lightMode ? darkMode : lightMode)
 	}, [])
 
 	const handleSavePreference = useCallback((currentTheme: string) => {

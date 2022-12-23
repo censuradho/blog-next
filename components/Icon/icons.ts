@@ -4,6 +4,8 @@ import { VscHome } from '@meronex/icons/vsc';
 import { BsArrowRight, BsArrowLeft, BsArrowUp } from '@meronex/icons/bs';
 import { WiDaySunny } from '@meronex/icons/wi';
 import { HiMoon } from '@meronex/icons/hi';
+import { EnRss } from '@meronex/icons/en';
+import { AiFillLinkedin } from '@meronex/icons/ai';
 
 export const icons =  {
   verticalRounded: BiDotsVerticalRounded,
@@ -13,5 +15,7 @@ export const icons =  {
   arrowLeft: BsArrowLeft,
   arrowUp: BsArrowUp,
   daySunny: WiDaySunny,
-  moon: HiMoon
+  moon: HiMoon,
+  rss: EnRss,
+  linkedin: AiFillLinkedin
 }

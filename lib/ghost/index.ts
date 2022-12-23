@@ -1,6 +1,8 @@
-import GhostContentAPI, { GhostContentAPIOptions, Params } from "@tryghost/content-api";
-// 7478379a8daa1c8b90fd4aa8fa
-// http://localhost:2368
+import GhostContentAPI, { Params } from "@tryghost/content-api";
+import { GhostSettings } from "./types";
+
+import { processEnv } from 'lib/processEnv'
+
 const api = new GhostContentAPI({
   url: process.env.GHOST_URL as string,
   key: process.env.GHOST_KEY as string,
@@ -76,4 +78,25 @@ export async function getTag(slug: string, options?: Params) {
       console.error(err);
       throw new Error(err)
     });
+}
+
+export async function getAllSettings(): Promise<GhostSettings> {
+  //const cached = getCache<SettingsResponse>('settings')
+  //if (cached) return cached
+  const settings = await api.settings.browse()
+  settings.url = settings?.url?.replace(/\/$/, ``)
+
+  const iconImage = settings.icon
+  const logoImage = settings.logo
+  const coverImage = settings.cover_image
+
+  const result = {
+    processEnv,
+    ...settings,
+    ...(iconImage && { iconImage }),
+    ...(logoImage && { logoImage }),
+    ...(coverImage && { coverImage }),
+  }
+  
+  return result
 }
