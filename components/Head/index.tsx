@@ -24,15 +24,11 @@ export function Head (props: HeadProps) {
       <meta property="twitter:title" content={twitter?.title || title} />
       <meta property="twitter:image" content={twitter?.image || image} />
       <meta property="twitter:description" content={twitter?.description || description} />
-      <meta name="msapplication-TileColor" content="#da532c" />
-      <meta name="theme-color" content="#ffffff" />
 
       <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon.ico" />
       <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png" />
       <link rel="shortcut icon" href="/public/favicon-32x32.png" type="image/png" />
-      <link rel="manifest" href="public/site.webmanifest" />
-      <link rel="mask-icon" href="public/safari-pinned-tab.svg" color="#5bbad5" />
     </NextHead>
   )
 }

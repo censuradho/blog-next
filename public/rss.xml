@@ -9,10 +9,17 @@
             <link>http://localhost:3000/</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 23 Dec 2022 21:48:16 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 12 Jan 2023 17:31:41 GMT</lastBuildDate>
         <atom:link href="http://localhost:3000/rss/" rel="self" type="application/rss+xml"/>
-        <copyright><![CDATA[All rights reserved 2022, Ibas]]></copyright>
+        <copyright><![CDATA[All rights reserved 2023, Ibas]]></copyright>
         <ttl>60</ttl>
+        <item>
+            <title><![CDATA[Redesign do programa de emagrecimento Simbora Trincar]]></title>
+            <description><![CDATA[Simbora trincar é um curso de emagrecimento e saúde desenvolvido para otimizar o emagrecimento, queima de gordura e definição muscular transforma seu corpo através de ferramentas para mudar a sua forma de pensar e treinos exclusivos para queima de gordura. ]]></description>
+            <link>http://localhost:3000/redesign-do-programa-de-emagrecimento-simbora-trincar/</link>
+            <guid isPermaLink="false">63c03e5706162800016ccdb8</guid>
+            <pubDate>Thu, 12 Jan 2023 17:19:59 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Lo-fi: Why This Song Makes Your Brain Relax (And Who Are The Artists Behind It)]]></title>
             <description><![CDATA[ the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.]]></description>

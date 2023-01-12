@@ -17,6 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const settings = await getAllSettings()
 
+  console.log(posts)
   await generateRssFeed({
     posts,
     settings
@@ -26,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   };
 }
 
