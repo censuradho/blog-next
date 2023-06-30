@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   description: 'Exemple of blog using Next.js and Ghost CMS'
 }
 
+export const revalidate = 60
+
 export default async function HomePage () {
   return (
     <main>
