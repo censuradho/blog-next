@@ -60,7 +60,7 @@ export function HomeLayout (props: HomeProps) {
         <Flex column gap="lg">
           {renderPinedPost()}
           <Styles.Section>
-          <Flex column gap="lg">
+            <Flex column gap="lg">
               <Flex fullWidth alignItems="center" gap="sm">
                 <Styles.SectionTitle>More issue</Styles.SectionTitle>
                 <hr />
