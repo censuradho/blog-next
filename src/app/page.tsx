@@ -1,3 +1,4 @@
+import { getPosts } from "lib/ghost"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
 export const revalidate = 60
 
 export default async function HomePage () {
+  const posts = await getPosts({
+    include: ['authors', 'tags']
+  })
+
+  
   return (
     <main>
 
