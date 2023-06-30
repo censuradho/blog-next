@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps<{ post: PostsOrPages, meta: Paginati
   })
   
   if (!post) {
-  return {
+    return {
       notFound: true,
       revalidate: 10
     }   
@@ -35,10 +35,10 @@ function Page (props: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <MainLayout>
       <Head 
-          title="Blog: Template using Next.js and Ghost CMS" 
-          description="Exemple of blog using Next.js and Ghost CMS"
-          image={Logo as any as string}
-        />
+        title="Blog: Template using Next.js and Ghost CMS" 
+        description="Exemple of blog using Next.js and Ghost CMS"
+        image={Logo as any as string}
+      />
       <HomeLayout {...props} />
     </MainLayout>
   )
