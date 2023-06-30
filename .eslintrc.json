@@ -2,6 +2,8 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "@next/next/link-passhref": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "indent": ["warn", 2]
+
   }
 }
