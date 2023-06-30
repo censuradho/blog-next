@@ -20,3 +20,10 @@
 
 
 
+html, body, main {
+  height: 100%
+}
+
+body {
+  background: var(--background)
+}
