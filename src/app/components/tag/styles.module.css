@@ -10,5 +10,6 @@
 .tag:hover,
 .tag:focus {
   background-color: var(--foreground);
-  color: var(--heading)
+  color: var(--heading);
+  border: 1px solid var(--border)
 }
