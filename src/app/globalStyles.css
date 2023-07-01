@@ -41,3 +41,7 @@ html, body, main {
 body {
   background: var(--background)
 }
+
+a {
+  text-decoration: none;
+}

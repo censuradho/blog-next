@@ -1,6 +1,6 @@
 import { getPosts } from "lib/ghost"
 import { Metadata } from "next"
-import { Article } from "./components"
+import { Article, FeaturedArticle } from "./components"
 import { Box } from "@/components"
 
 import styles from './styles.module.css'
@@ -18,6 +18,11 @@ export default async function HomePage () {
     filter: ['featured:false']
   })
 
+  const featuredPosts = await getPosts({
+    include: ['authors', 'tags'],
+    filter: ['featured:true']
+  })
+
   const renderPosts = posts.map((value => (
     <Article
       key={value.slug}
@@ -25,13 +30,23 @@ export default async function HomePage () {
     />
   )))
 
+  const renderFeaturedPosts = featuredPosts.map((value => (
+    <FeaturedArticle
+      key={value.slug}
+      data={value}
+    />
+  )))
+
   return (
     <main className={styles.main}>
-      <div>
+      <Box gap={1} flexDirection="column">
+        <Box gap={1} flexDirection="column">
+          {renderFeaturedPosts}
+        </Box>
         <Box gap={1} flexDirection="column">
           {renderPosts}
         </Box>
-      </div>
+      </Box>
     </main>
   )
 }
