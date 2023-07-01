@@ -43,3 +43,13 @@ a {
   color: inherit;
   font-weight: inherit;
 }
+
+.container {
+  width: 100%;
+  max-width: 600px;;
+  margin: 0 auto
+}
+
+p {
+  line-height: 170%;
+}
