@@ -52,12 +52,18 @@ export async function generateMetadata ({ params }: Params<{ slug: string }>): P
       modifiedTime: data.updated_at as string,
       tags:  data.tags?.map(value => value.name as string),
       url,
+      images: [
+        data?.feature_image || ''
+      ]
     },
     twitter: {
       card: 'summary',
       site: url,
       title,
-      description
+      description,
+      images: [
+        data?.feature_image || ''
+      ]
     }
   }
 }
