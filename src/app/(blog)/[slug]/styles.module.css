@@ -8,11 +8,12 @@
 
 .blog__header {
   margin-top: 4rem;
+  padding: 0 24px;
 }
 
 .blog_banner {
   width: 100%;
-  height: 400px;
+  height: 300px;
   position: relative;
   overflow: hidden;
   margin-top: 2rem;
@@ -45,7 +46,6 @@
 .blog_post__header {
   margin-bottom: 2rem;
 }
-
 
 
 .blog_post__back_button {
@@ -146,5 +146,10 @@
 @media (min-width: 762px) {
   .blog_banner {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
+    height: 400px
+  }
+
+  .blog__header {
+    padding: 0;
   }
 }
