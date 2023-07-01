@@ -1,6 +1,6 @@
 import { getPosts, getTags } from "lib/ghost"
 import { Metadata } from "next"
-import { Article, FeaturedArticle, Sidebar } from "./components"
+import { Article, FeaturedArticle, Sidebar } from "../components"
 import { Box } from "@/components"
 
 import styles from './styles.module.css'

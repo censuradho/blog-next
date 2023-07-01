@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  padding: 24px;
+  margin: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer span {
+  font-size: var(--fs-xxsm);
+}
+
+.footer a {
+  text-decoration: underline;
+  text-align: center;
+}
