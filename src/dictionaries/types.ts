@@ -1,3 +1,3 @@
 import json from './pt-BR.json'
 
-export type DictionaryData = typeof json
+export type Dictionary = typeof json

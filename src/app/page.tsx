@@ -4,6 +4,7 @@ import { Article, FeaturedArticle, Sidebar } from "./components"
 import { Box } from "@/components"
 
 import styles from './styles.module.css'
+import { getDictionary } from "utils/getDictionary"
 
 export const metadata: Metadata = {
   title: 'Blog: Template using Next.js and Ghost CMS',
@@ -25,6 +26,8 @@ export default async function HomePage () {
 
   const tags = await getTags()
 
+  const { social } = await getDictionary()
+
   const renderPosts = posts.map((value => (
     <Article
       key={value.slug}
@@ -43,6 +46,7 @@ export default async function HomePage () {
     <main className={styles.main}>
       <Sidebar 
         tags={tags}
+        social={social}
       />
       <div className={styles.main__articles}>
         <Box gap={1} flexDirection="column">

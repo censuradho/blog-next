@@ -5,6 +5,7 @@ import { Box } from "@/components";
 import { resolvePath } from "utils/helpers";
 import { paths } from "constants/routes";
 import Link from "next/link";
+import { Icon } from "components";
 
 export function Sidebar (props: SideBarProps) {
   const { tags } = props
@@ -28,6 +29,8 @@ export function Sidebar (props: SideBarProps) {
           <ul className={styles.section__tag__list}>{renderTags}</ul>
         </nav>
       </div>
+      <Box>
+      </Box>
     </div>
   )
 }
