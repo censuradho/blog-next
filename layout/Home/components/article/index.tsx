@@ -42,11 +42,11 @@ export function Article (props: ArticleProps) {
       </Flex>
       <Flex gap="sm" alignItems="center">
         {author?.avatarUrl && (
-            <Avatar
-              size={50}
-              src={author?.avatarUrl} 
-              alt={author?.name || ''}  
-            />
+          <Avatar
+            size={50}
+            src={author?.avatarUrl} 
+            alt={author?.name || ''}  
+          />
         )}
         <Flex column gap="xs" alignItems="flex-start">
           <Styles.Username>
