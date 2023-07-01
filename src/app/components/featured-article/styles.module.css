@@ -17,6 +17,10 @@
   overflow: hidden;
 }
 
+.article__image img {
+  object-fit: cover;
+}
+
 .article__title {
   font-size: var(--fs-xlg);
   color: var(--heading);

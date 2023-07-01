@@ -17,5 +17,6 @@ export const routePaths: Record<Paths, RoutePaths> = {
 }
 
 export const paths = {
-  post: '/post/:slug'
+  post: '/post/:slug',
+  tags: '/tags/:slug'
 }

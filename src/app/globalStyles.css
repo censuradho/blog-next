@@ -1,6 +1,7 @@
 :root {
   --background: #e8e8e8;
   --foreground: #f1f2f5;
+  --foregroundOpacity: rgba(0, 0, 0, 0.05);
   --heading: #1D1B1A;
   --body: #8f8f8f;
   --invertBackground: #000;
@@ -33,15 +34,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-html, body, main {
-  height: 100%
-}
-
 body {
   background: var(--background)
 }
 
 a {
   text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
 }

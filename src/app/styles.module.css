@@ -1,11 +1,19 @@
 .main {
   display: grid;
-  padding: 24px
+  padding: 24px;
+  margin-bottom: 3rem;;
 }
 
 @media (min-width: 762px) {
   .main {
-    max-width: 600px;
-    margin: 0 auto
+    grid-template-columns: 300px 1fr;
+    max-width: 1024px;
+    gap: 1rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;;
+  }
+  .main__articles {
+    display: grid;
+    gap: 1rem
   }
 }

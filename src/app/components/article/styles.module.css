@@ -7,7 +7,8 @@
 }
 .article__title {
   font-size: var(--fs-xlg);
-  color: var(--heading)
+  color: var(--heading);
+  margin-bottom: 1rem;
 }
 
 .article__created_at {

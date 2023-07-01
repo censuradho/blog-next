@@ -31,26 +31,25 @@ export function FeaturedArticle ({ data }: FeaturedPost) {
 
   return (
     <article className={styles.article}>
-      <Link href={href}>
+      <Link aria-label={data.title} href={href}>
         <figure className={styles.article__image}>
           <Image 
             src={data.feature_image || ''}
             alt={data?.feature_image_alt || data.title || ''}
             fill
+            sizes="400px, (min-width) 600px"
           />
         </figure>
       </Link>
       <div className={styles.article__content}>
         <div className={styles.article__author}>
-          <Link href={href}>
-            <Image 
-              className={styles.article__author__avatar}
-              src={author?.profile_image || ''}
-              alt={author?.name || ''}
-              width={25}
-              height={25}
-            />
-          </Link>
+          <Image 
+            className={styles.article__author__avatar}
+            src={author?.profile_image || ''}
+            alt={author?.name || ''}
+            width={25}
+            height={25}
+          />
           <strong className={styles.article__author__title}>{author?.name}</strong>
         </div>
         <div>
