@@ -1,6 +1,6 @@
 :root {
-  --background: #f1f2f5;
-  --foreground: #e8e8e8;
+  --background: #e8e8e8;
+  --foreground: #f1f2f5;
   --heading: #1D1B1A;
   --body: #8f8f8f;
   --invertBackground: #000;
@@ -21,6 +21,7 @@
   --ff-heading: 'Poppins';
 
   --border-radius: 4px;
+  --border-radius-lg: 8px;
 }
 
 * {
