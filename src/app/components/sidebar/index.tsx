@@ -1,14 +1,17 @@
-import { SideBarProps } from "./types";
+import Link from "next/link";
 
-import styles from './styles.module.css'
-import { Box } from "@/components";
+
 import { resolvePath } from "utils/helpers";
 import { paths } from "constants/routes";
-import Link from "next/link";
-import { Icon } from "components";
+
+import { Box, Icon } from "@/components";
+
+import styles from './styles.module.css'
+import { SideBarProps } from "./types";
+
 
 export function Sidebar (props: SideBarProps) {
-  const { tags } = props
+  const { tags, social } = props
 
   const renderTags = tags?.map(value => {
     const href = resolvePath(paths.tags, {
@@ -21,6 +24,19 @@ export function Sidebar (props: SideBarProps) {
       </li>
     )
   })
+
+  const renderSocial = Object
+    .entries(social)
+    .map(([key, value]) => (
+      <a
+        key={key} 
+        href={value}
+        rel="noreferrer"
+        target="_blank"
+      >
+        <Icon name={key as any} />
+      </a>
+    ))
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar__card}>
@@ -29,7 +45,8 @@ export function Sidebar (props: SideBarProps) {
           <ul className={styles.section__tag__list}>{renderTags}</ul>
         </nav>
       </div>
-      <Box>
+      <Box gap={1} flexWrap="wrap">
+        {renderSocial}
       </Box>
     </div>
   )
