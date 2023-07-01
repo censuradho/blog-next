@@ -22,12 +22,12 @@ export function Sidebar (props: SideBarProps) {
   })
   return (
     <div className={styles.sidebar}>
-      <Box gap={1} flexDirection="column">
+      <div className={styles.sidebar__card}>
         <strong className={styles.sidebar__section__title}>Tags</strong>
         <nav>
           <ul className={styles.section__tag__list}>{renderTags}</ul>
         </nav>
-      </Box>
+      </div>
     </div>
   )
 }
