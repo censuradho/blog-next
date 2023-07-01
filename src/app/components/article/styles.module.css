@@ -1,0 +1,8 @@
+.article__title {
+  font-size: var(--fs-xlg);
+  color: var(--heading)
+}
+
+.article__created_at {
+  font-size: var(--fs-xxsm);
+}
