@@ -1,4 +1,5 @@
-import { paths } from 'constants/routes'
+import { paths } from '@/constants/paths'
+
 import { resolvePath } from 'utils/helpers'
 
 import { Tag } from '@/app/components'

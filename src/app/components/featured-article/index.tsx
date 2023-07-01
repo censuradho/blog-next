@@ -4,7 +4,7 @@ import Link from "next/link";
 import { resolvePath } from "utils/helpers";
 import { Tag } from "@/app/components";
 
-import { paths } from "constants/routes";
+import { paths } from '@/constants/paths'
 import { format, formatDistance } from "@/lib/date-fns";
 
 import { FeaturedPost } from "./types";
