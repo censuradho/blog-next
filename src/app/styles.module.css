@@ -1,0 +1,10 @@
+.main {
+  display: grid;
+}
+
+@media (min-width: 762px) {
+  .main {
+    max-width: 500px;
+    margin: 0 auto
+  }
+}

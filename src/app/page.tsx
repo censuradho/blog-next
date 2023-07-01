@@ -1,6 +1,9 @@
 import { getPosts } from "lib/ghost"
 import { Metadata } from "next"
 import { Article } from "./components"
+import { Box } from "@/components"
+
+import styles from './styles.module.css'
 
 export const metadata: Metadata = {
   title: 'Blog: Template using Next.js and Ghost CMS',
@@ -23,8 +26,12 @@ export default async function HomePage () {
   )))
 
   return (
-    <main>
-      {renderPosts}
+    <main className={styles.main}>
+      <div>
+        <Box gap={1} flexDirection="column">
+          {renderPosts}
+        </Box>
+      </div>
     </main>
   )
 }
