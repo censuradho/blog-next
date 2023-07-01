@@ -13,5 +13,9 @@ export const routePaths: Record<Paths, RoutePaths> = {
     path: '/',
     label: 'Blog',
     icon: 'homeLine'
-  },
+  }
+}
+
+export const paths = {
+  post: '/post/:slug'
 }

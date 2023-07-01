@@ -1,10 +1,24 @@
+import { paths } from 'constants/routes'
+import { resolvePath } from 'utils/helpers'
+import { Tag } from '../tag'
 import styles from './styles.module.css'
 import { ArticleProps } from './types'
 
-export function Article (props: ArticleProps) {
+export function Article ({ data }: ArticleProps) {
+
+  const renderTags = data.tags?.map(value => (
+    <Tag
+      key={value.slug}
+      href={resolvePath(paths.post, { slug: value.slug })}
+    >
+      {`#${value.name}`}
+    </Tag>
+  ))
+
   return (
     <article className={styles.article}>
-
+      <h2>{data.title}</h2>
+      {renderTags}
     </article>
   )
 }

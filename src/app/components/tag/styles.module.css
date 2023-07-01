@@ -1,0 +1,14 @@
+.tag {
+  font-weight: 500;
+  color: var(--body);
+  text-decoration: none;
+  font-size: var(--fs-xsm);
+  padding: 4px 7px;
+  border-radius: var(--border-radius);
+}
+
+.tag:hover,
+.tag:focus {
+  background-color: var(--foreground);
+  color: var(--heading)
+}
