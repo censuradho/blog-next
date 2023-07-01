@@ -1,8 +1,11 @@
 .sidebar {
   height: max-content;
+  display: grid;
+  gap: 2rem
 }
 
-.sidebar__card {
+.sidebar__card,
+.sidebar__card--transparent {
   background: var(--foreground);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
@@ -11,13 +14,26 @@
   gap: 1.2rem
 }
 
+.sidebar__card--transparent {
+  background: transparent;
+  padding: 24px 0;
+}
+
 .sidebar__section__title {
   font-size: var(--fs-sm);
   font-weight: 700;
 }
 
-.section__tag__list {
+.sidebar__icon {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.sidebar__icon:hover {
+  background-color: var(--background);
+  border-radius: var(--border-radius);
 }
 
 .section__tag__item {

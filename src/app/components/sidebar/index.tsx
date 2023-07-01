@@ -33,10 +33,12 @@ export function Sidebar (props: SideBarProps) {
         href={value}
         rel="noreferrer"
         target="_blank"
+        className={styles.sidebar__icon}
       >
         <Icon name={key as any} />
       </a>
     ))
+
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar__card}>
@@ -45,9 +47,11 @@ export function Sidebar (props: SideBarProps) {
           <ul className={styles.section__tag__list}>{renderTags}</ul>
         </nav>
       </div>
-      <Box gap={1} flexWrap="wrap">
-        {renderSocial}
-      </Box>
+      <div className={styles['sidebar__card']}>
+        <Box gap={0.5} flexWrap="wrap">
+          {renderSocial}
+        </Box>
+      </div>
     </div>
   )
 }
