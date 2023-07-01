@@ -18,5 +18,6 @@ export const routePaths: Record<Paths, RoutePaths> = {
 
 export const paths = {
   post: '/post/:slug',
-  tags: '/tags/:slug'
+  tags: '/tags/:slug',
+  home: '/'
 }

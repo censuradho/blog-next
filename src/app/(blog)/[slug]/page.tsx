@@ -3,15 +3,15 @@ import { Params } from "../types";
 import { appSettings } from "@/config/app";
 import { Metadata } from "next";
 import { resolvePath } from "utils/helpers";
-import { paths } from "constants/routes";
-import { getDictionary } from "utils/getDictionary";
+import { paths } from "@/constants/paths";
 
 import styles from './styles.module.css'
 import { Highligh } from "./components";
-import { classGroupe } from "utils/classNames";
+
 import { format } from "@/lib/date-fns";
 import Image from "next/image";
-import { Box } from "@/components";
+import { Box, Icon } from "@/components";
+import Link from "next/link";
 
 export async function generateStaticParams () {
   const posts = await getPosts()
@@ -88,8 +88,17 @@ export default async function PostPage ({ params }: Params<{ slug: string }>) {
 
   return (
     <main className="container">
+      <header className={styles.blog__header}>
+        <Link href={paths.home}>
+          <Box gap={0.5} alignItems="center">
+            <Icon name="arrowLeft" />
+            <span>Voltar ao Blog</span>
+          </Box>
+        </Link>
+      </header>
       <figure className={styles.blog_banner}>
         <Image 
+          priority
           src={data.feature_image || ''}
           alt={data.feature_image_alt || data.title || ''}
           fill

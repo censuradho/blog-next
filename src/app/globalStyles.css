@@ -53,3 +53,14 @@ a {
 p {
   line-height: 170%;
 }
+
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+}

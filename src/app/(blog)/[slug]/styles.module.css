@@ -6,12 +6,16 @@
   margin: 0 auto 4rem auto
 }
 
+.blog__header {
+  margin-top: 4rem;
+}
+
 .blog_banner {
   width: 100%;
   height: 400px;
   position: relative;
-  margin-top: 4rem;
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .blog__author {
