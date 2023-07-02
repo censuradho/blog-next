@@ -36,6 +36,11 @@
   border-radius: var(--border-radius);
 }
 
+.section__tag__list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
 .section__tag__item {
   text-decoration: none;
   color: var(--heading);

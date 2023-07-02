@@ -4,6 +4,12 @@
   margin-bottom: 3rem;;
 }
 
+.main__articles {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
 @media (min-width: 762px) {
   .main {
     grid-template-columns: 300px 1fr;
@@ -12,8 +18,5 @@
     margin: 0 auto;
     margin-bottom: 3rem;;
   }
-  .main__articles {
-    display: grid;
-    gap: 1rem
-  }
+
 }
