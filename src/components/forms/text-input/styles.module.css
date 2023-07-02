@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%
 }
 
 .text__input__icon {
@@ -36,6 +37,7 @@
   border: none;
   border-radius: var(--border-radius);
   background: rgba(0, 0, 0, 0.02);
+  width: 100%
 }
 
 .text_input-error_message {

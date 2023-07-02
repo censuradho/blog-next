@@ -18,12 +18,14 @@ export function Header () {
             className={styles.header__logo}
           />
         </Link>
-        <TextInput 
-          placeholder="Pesquisar..."
-          rightIcon={{
-            name: 'search'
-          }}
-        />
+        <form className={styles.header__search_form}>
+          <TextInput 
+            placeholder="Pesquisar..."
+            rightIcon={{
+              name: 'search'
+            }}
+          />
+        </form>
       </div>
     </header>
   )

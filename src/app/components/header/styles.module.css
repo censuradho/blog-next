@@ -8,7 +8,14 @@
 
 .header__logo {
   border-radius: 50%;
+  margin-right: 2rem;
 }
+
+.header__search_form {
+  width: 100%;
+  max-width: 400px;;
+}
+
 .header__content {
   max-width: 1024px;
   height: 60px;
