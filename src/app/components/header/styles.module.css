@@ -1,0 +1,20 @@
+.header {
+  background: var(--foreground);
+  border-bottom: 1px solid var(--border);
+  top: 0;
+  position: sticky;
+  z-index: 10;
+}
+
+.header__logo {
+  border-radius: 50%;
+}
+.header__content {
+  max-width: 1024px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 24px
+
+}
