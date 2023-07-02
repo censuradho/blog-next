@@ -20,11 +20,8 @@ export function Header () {
         </Link>
         <TextInput 
           placeholder="Pesquisar..."
-          leftIcon={{
-            name: 'done'
-          }}
           rightIcon={{
-            name: 'done'
+            name: 'search'
           }}
         />
       </div>

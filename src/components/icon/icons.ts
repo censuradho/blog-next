@@ -8,7 +8,9 @@ import {
   AiOutlineClose,
   AiOutlineDownload,
   AiOutlineMenu,
+  AiOutlineSearch
 } from '@meronex/icons/ai';
+
 import {
   BiDotsVerticalRounded,
   BiMoon,
@@ -63,5 +65,6 @@ export const icons = {
   spotify: BilSpotify,
   done: MdDone,
   arrowUpRight: BsArrowUpRight,
-  tag: BiTag
+  tag: BiTag,
+  search: AiOutlineSearch
 }
