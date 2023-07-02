@@ -33,6 +33,10 @@
   margin: 0 auto;
 }
 
+.header__search__toggle {
+
+}
+
 .header__search_form {
   width: 100%;
   max-width: 400px;
@@ -43,6 +47,7 @@
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
   padding: 0 24px
 
@@ -56,6 +61,9 @@
     display: block;
   }
 
+  .header__search__toggle {
+    display: none;
+  }
   .header__search_form {
     display: block;
   }

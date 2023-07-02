@@ -1,0 +1,8 @@
+.button_icon {
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+.button_icon:hover {
+  background-color: var(--foregroundOpacity);
+}

@@ -13,6 +13,7 @@ import q from 'querystring'
 import { useRouter } from 'next/navigation'
 import { useToggle } from "@/hooks";
 import { classNames } from "utils/classNames";
+import { ButtonIcon } from "@/components";
 
 export function Header () {
   const [search, setSearch] = useState('')
@@ -63,7 +64,9 @@ export function Header () {
             </form>
           </div>
         </div>
-        <button onClick={toggleSearchFormOpen}>search</button>
+        <div className={styles.header__search__toggle}>
+          <ButtonIcon icon={{ name: 'search' }} onClick={toggleSearchFormOpen} />
+        </div>
       </div>
     </header>
   )
