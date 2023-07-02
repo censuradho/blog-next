@@ -1,0 +1,66 @@
+.text_input__root {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.text__input__icon {
+  position: absolute;
+}
+
+.text__input__icon--left {
+  left: 10px
+}
+
+.text__input__icon--right {
+  right: 10px
+}
+
+.text_input {
+  display: grid;
+  gap: 1rem
+}
+
+
+
+.text_input-label {
+  font-size: var(--fs-sm);
+  font-weight: 400;
+}
+
+.text_input-input {
+  padding: 0 1rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: var(--border-radius);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.text_input-error_message {
+  color: var(--error);
+  font-size: var(--fs-xsm);
+  font-weight: 400;
+}
+
+.text_input-input::placeholder {
+  color: var(--highlight)
+}
+
+.text_input-default .text_input-label {
+  cursor: pointer
+}
+
+.text_input-dark .text_input-input {
+  font-weight: 400;
+  font-size: var(--fs-xsm);
+} 
+
+.text_input-input--has_left_icon {
+  padding-left: 40px;
+}
+
+.text_input-input--has_right_icon {
+  padding-right: 40px;
+}

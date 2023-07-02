@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from './styles.module.css'
 import Link from "next/link";
 import { paths } from "@/constants/paths";
+import { TextInput } from "@/components/forms";
 
 export function Header () {
   return (
@@ -17,6 +18,15 @@ export function Header () {
             className={styles.header__logo}
           />
         </Link>
+        <TextInput 
+          placeholder="Pesquisar..."
+          leftIcon={{
+            name: 'done'
+          }}
+          rightIcon={{
+            name: 'done'
+          }}
+        />
       </div>
     </header>
   )
