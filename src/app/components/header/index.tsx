@@ -11,12 +11,22 @@ import { FormEvent, useState } from "react";
 import q from 'querystring'
 
 import { useRouter } from 'next/navigation'
+import { useToggle } from "@/hooks";
+import { classNames } from "utils/classNames";
 
 export function Header () {
   const [search, setSearch] = useState('')
 
+  const [searchFormOpen, toggleSearchFormOpen] = useToggle()
+
   const router = useRouter()
   
+  const searchClass = classNames({
+    [styles['header__search__root--open']]: searchFormOpen
+  }, [
+    styles.header__search__root
+  ])
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
 
@@ -39,16 +49,21 @@ export function Header () {
             className={styles.header__logo}
           />
         </Link>
-        <form onSubmit={handleSubmit} className={styles.header__search_form}>
-          <TextInput 
-            placeholder="Pesquisar..."
-            value={search}
-            onChange={event => setSearch(event.target.value)}
-            rightIcon={{
-              name: 'search'
-            }}
-          />
-        </form>
+        <div className={searchClass}>
+          <div className={styles.header__search__content}>
+            <form onSubmit={handleSubmit} className={styles.header__search_form}>
+              <TextInput 
+                placeholder="Pesquisar..."
+                value={search}
+                onChange={event => setSearch(event.target.value)}
+                rightIcon={{
+                  name: 'search'
+                }}
+              />
+            </form>
+          </div>
+        </div>
+        <button onClick={toggleSearchFormOpen}>search</button>
       </div>
     </header>
   )

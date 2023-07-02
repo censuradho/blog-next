@@ -44,10 +44,15 @@ a {
   font-weight: inherit;
 }
 
-.container {
+.container,
+.container--lg {
   width: 100%;
   max-width: 600px;;
   margin: 0 auto
+}
+
+.container--lg {
+  max-width: 1024px;;
 }
 
 p {
