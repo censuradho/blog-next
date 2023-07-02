@@ -44,10 +44,6 @@ a {
   font-weight: inherit;
 }
 
-h1 {
-  font-size: var(--fs-md);
-}
-
 .container,
 .container--lg {
   width: 100%;

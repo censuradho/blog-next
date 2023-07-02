@@ -2,7 +2,8 @@ import { Article } from "@/app/components"
 import { Box } from "@/components"
 import { getPosts } from "lib/ghost"
 
-import styles from '../styles.module.css'
+import defaultStyles from '../styles.module.css'
+import styles from './styles.module.css'
 
 export default async function SearchPage ({ searchParams }: any) {
   const { q: query } = searchParams
@@ -22,8 +23,8 @@ export default async function SearchPage ({ searchParams }: any) {
   
   return (
     <main className="container">
-      <div className={styles.main__articles}>
-        <h1>{`Resultados pela busca ${query}`}</h1>
+      <div className={defaultStyles.main__articles}>
+        <h1 className={styles.search__title}>{`Resultados pela busca ${query}`}</h1>
         <Box gap={1} flexDirection="column">
           {renderPosts}
         </Box>

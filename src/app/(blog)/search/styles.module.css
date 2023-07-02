@@ -1,0 +1,5 @@
+.search__title {
+  font-size: var(--fs-md);
+  display: block;
+  margin-bottom: .875rem
+}
