@@ -1,4 +1,5 @@
 export const paths = {
   home: '/',
-  post: '/:slug'
+  post: '/:slug',
+  search: '/search'
 }
